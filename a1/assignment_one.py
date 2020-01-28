@@ -199,13 +199,16 @@ def rock_paper_scissors():
 
 
 def number_generator():
+    """
+    Make a lottery ticket with six unique numbers between 1 and 49.
+
+    :return: returns a list of six unique numbers between 1 and 49.
+    """
     lottery_numbers = []
-    for x in range(0, 6):
-        number = random.randint(0, 50)
-    if number in lottery_numbers:
-        x = x - 1
-    else:
-        lottery_numbers.append(number)
+    for x in range(49):
+        lottery_numbers.append(x + 1)
+    draw = random.sample(lottery_numbers, 6)
+    return sorted(draw)
 
 
 def main():
@@ -214,12 +217,13 @@ def main():
 
     :return: no return
     """
-    convert_to_roman_numeral(5)
-    convert_to_roman_numeral(3579)
+    # convert_to_roman_numeral(5)
+    # convert_to_roman_numeral(3579)
     # colour_mixer()
     # time_calculator(70)
-    print(compound_interest(5000, 0.05, 24, 0.5))
-    rock_paper_scissors()
+    # print(compound_interest(5000, 0.05, 24, 0.5))
+    # rock_paper_scissors()
+    print(number_generator())
 
 
 if __name__ == "__main__":
