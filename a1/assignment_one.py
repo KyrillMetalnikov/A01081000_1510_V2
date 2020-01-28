@@ -211,6 +211,51 @@ def number_generator():
     return sorted(draw)
 
 
+def number_translator():
+    """
+    Convert letters in a phone number to numbers.
+
+    :return: The new phone number with no letters: type string
+    """
+    print("Hello!  Please enter your phone number and we will convert all letters to numbers!")
+    phone_number_raw = input("Please input your phone number in the form XXX-XXX-XXXX").lower()
+    phone_number = separate_chars(phone_number_raw)  # use helper function to convert input into a list of chars
+
+    for x in range(12):  # range is 12 as we need 12 characters
+        if isinstance(phone_number[x], int):  # checking if the element is a number
+            pass
+
+        elif phone_number[x] == "-":
+            pass
+
+        else:
+            if phone_number[x] == "a" or phone_number[x] == "b" or phone_number[x] == "c":
+                phone_number[x] = "2"
+
+            elif phone_number[x] == "d" or phone_number[x] == "e" or phone_number[x] == "f":
+                phone_number[x] = "3"
+
+            elif phone_number[x] == "g" or phone_number[x] == "h" or phone_number[x] == "i":
+                phone_number[x] = "4"
+
+            elif phone_number[x] == "j" or phone_number[x] == "k" or phone_number[x] == "l":
+                phone_number[x] = "5"
+
+            elif phone_number[x] == "m" or phone_number[x] == "n" or phone_number[x] == "o":
+                phone_number[x] = "6"
+
+            elif phone_number[x] == "p" or phone_number[x] == "q" or phone_number[x] == "r" or phone_number[x] == "s":
+                phone_number[x] = "7"
+
+            elif phone_number[x] == "t" or phone_number[x] == "u" or phone_number[x] == "v":
+                phone_number[x] = "8"
+
+            elif phone_number[x] == "w" or phone_number[x] == "x" or phone_number[x] == "y" or phone_number[x] == "z":
+                phone_number[x] = "9"
+
+    return "".join(phone_number)
+
+
 def main():
     """
     Run all the functions in this module.
@@ -224,6 +269,7 @@ def main():
     # print(compound_interest(5000, 0.05, 24, 0.5))
     # rock_paper_scissors()
     print(number_generator())
+    # print(number_translator())
 
 
 if __name__ == "__main__":
