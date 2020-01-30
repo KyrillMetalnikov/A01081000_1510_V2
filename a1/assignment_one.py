@@ -1,3 +1,6 @@
+"""
+The module contains a variety of different functions and their helpers.
+"""
 import math
 import random
 import doctest
@@ -7,7 +10,7 @@ def find_roman_digit(digit, ones, fives, tens):
     """
     Convert a digit to roman numerals.
 
-    convert a digit to roman numerals based on symbols inserted
+    Convert a digit to roman numerals based on symbols inserted.
     :param digit: The digit to be converted: type integer
     :param ones: The ones place for the roman conversion: type string
     :param fives: The fives place for the roman conversion: type string
@@ -48,7 +51,7 @@ def separate_chars(string_of_chars):
     list_of_chars = []
 
     for i in str(string_of_chars):
-        list_of_chars.append(x)
+        list_of_chars.append(i)
     return list_of_chars
 
 
@@ -56,43 +59,46 @@ def convert_to_roman_numeral(positive_int):
     """
     Convert a number to roman numerals then print it out.
 
-    Uses a variety of helper functions to convert a number between 1-10000 to roman numerals then prints it on screen
+    Uses a variety of helper functions to convert a number between 1-10000 to roman numerals then prints it on screen.
+    For this function I used decomposition by splitting the function into a few separate functions.  I also used pattern
+    matching by reusing structures with only different parameters in order to save space.  I also used automation by not
+    requiring a user input in the program and automatically displaying the result to the user.
     :param positive_int: The number being converted to roman numerals: type int
     :precondition: Input an integer between 1-10000
     :postcondition: The correct roman numeral will be displayed on screen
     :return: no return
 
     >>> convert_to_roman_numeral(5)
-    5 in roman numerals is V
+    '5 in roman numerals is V'
     >>> convert_to_roman_numeral(50)
-    50 in roman numerals is L
+    '50 in roman numerals is L'
     >>> convert_to_roman_numeral(785)
-    785 in roman numerals is DCCLXXXV
+    '785 in roman numerals is DCCLXXXV'
     >>> convert_to_roman_numeral(3579)
-    3579 in roman numerals is MMMDLXXIX
+    '3579 in roman numerals is MMMDLXXIX'
     >>> convert_to_roman_numeral(10000)
-    10000 in roman numerals is MMMMMMMMMM
+    '10000 in roman numerals is MMMMMMMMMM'
     """
 
     positive_int = str(positive_int)
     if len(positive_int) == 5:
-        print(positive_int + " in roman numerals is MMMMMMMMMM")
+        return positive_int + " in roman numerals is MMMMMMMMMM"
     elif len(positive_int) == 4:  # used if the number's between 1000-9999
-        print(positive_int + " in roman numerals is " + "M" * int(separate_chars(positive_int)[0])
+        return (positive_int + " in roman numerals is " + "M" * int(separate_chars(positive_int)[0])
               + str(find_roman_digit(separate_chars(positive_int)[1], "C", "D", "M"))
               + str(find_roman_digit(separate_chars(positive_int)[2], "X", "L", "C"))
               + str(find_roman_digit(separate_chars(positive_int)[3], "I", "V", "X")))
     elif len(positive_int) == 3:  # used if the number's between 100-999
-        print(positive_int + " in roman numerals is "
+        return (positive_int + " in roman numerals is "
               + str(find_roman_digit(separate_chars(positive_int)[0], "C", "D", "M"))
               + str(find_roman_digit(separate_chars(positive_int)[1], "X", "L", "C"))
               + str(find_roman_digit(separate_chars(positive_int)[2], "I", "V", "X")))
     elif len(positive_int) == 2:  # used if the number's between 10-99
-        print(positive_int + " in roman numerals is "
+        return (positive_int + " in roman numerals is "
               + str(find_roman_digit(separate_chars(positive_int)[0], "X", "L", "C"))
               + str(find_roman_digit(separate_chars(positive_int)[1], "I", "V", "X")))
     elif len(positive_int) == 1:  # used if the number's between 1 - 9
-        print(positive_int + " in roman numerals is "
+        return (positive_int + " in roman numerals is "
               + find_roman_digit(separate_chars(positive_int)[0], "I", "V", "X"))
 
 
@@ -101,6 +107,8 @@ def colour_mixer():
     Mix two primary colours together.
 
     User inputs two primary colours and the function displays what colour is created when the two colours are mixed.
+    I used automation by having the program automatically check and output the colour that would result from mixing two
+    primary colours.
     :precondition: Each input must be a primary colour (red, yellow, blue) and both inputs have to be different colours.
     :postcondition: Function will display the mixed colour.
     :return: no return
@@ -123,6 +131,9 @@ def time_calculator(seconds):
     """
     Print how many days, hours, minutes and seconds there are in a certain number of seconds.
 
+    I used automation by having the function do basic math and organization instead of the user.  I used pattern
+    matching by seeing that other than the denominator, it is all the same equation so I kept it in the same area.
+    I also used the algorithm of / and % to find the day hour minute seconds.
     :param seconds: A positive integer that represents an amount of seconds
     :precondition: Number must be a positive integer
     :postcondition: Calculates how many days, hours, minutes and seconds there are in that number.
@@ -148,6 +159,8 @@ def compound_interest(principal, annual_interest_rate, number_of_yearly_compound
     Return how much money I will have after my interest compounds.
 
     Uses the compound interest formula to calculate how much money will be had after acquiring interest for a set time.
+    I used the algorithm a= p(1+i/n)^nt to find how much money would be in an account after acquiring interest for a set
+    period of time.  There is also automation as the function does not require any user input.
     :param principal: The amount of money that was originally deposited into the account: type float
     :param annual_interest_rate: The amount of yearly interest made on that account: type float
     :param number_of_yearly_compounds: The amount of times the interest compounds per year: type int
@@ -160,15 +173,15 @@ def compound_interest(principal, annual_interest_rate, number_of_yearly_compound
     >>> compound_interest(5000, 0.05, 24, 0.5)
     5126.44228491645
     """
-    amount = principal * ((1 + (annual_interest_rate / number_of_yearly_compounds))  # formula for compound interest
-                          ** (number_of_yearly_compounds * number_of_years_held))  # second part of formula
-    return amount
+    return (principal * ((1 + (annual_interest_rate / number_of_yearly_compounds))  # formula for compound interest
+            ** (number_of_yearly_compounds * number_of_years_held)))  # second part of formula
 
 
 def rock_paper_scissors():
     """
     Play a round of rock, paper, scissors.
 
+    I used 
     :return: no return
     """
     list_of_options = ["rock", "paper", "scissors"]
@@ -198,16 +211,16 @@ def rock_paper_scissors():
         print("You and your opponent both picked " + user_input + ".  You tied!")
 
 
-def number_generator():
+def number_generator(min_number, max_number, amount_of_digits):
     """
-    Make a lottery ticket with six unique numbers between 1 and 49.
+    Generate a list of random numbers.
 
-    :return: returns a list of six unique numbers between 1 and 49.
+    :return: returns a list of random unique numbers..
     """
     lottery_numbers = []
-    for i in range(49):
+    for i in range(min_number, max_number):
         lottery_numbers.append(i + 1)
-    draw = random.sample(lottery_numbers, 6)
+    draw = random.sample(lottery_numbers, amount_of_digits)
     return sorted(draw)
 
 
@@ -271,8 +284,8 @@ def main():
     # time_calculator(70)
     # print(compound_interest(5000, 0.05, 24, 0.5))
     # rock_paper_scissors()
-    # print(number_generator())
-    print(number_translator())
+    # print(number_generator(-100, 1000, 25))
+    # print(number_translator())
 
 
 if __name__ == "__main__":
