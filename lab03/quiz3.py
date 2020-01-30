@@ -43,6 +43,8 @@ def index_of_substring(sentence, substring):
     10
     >>> index_of_substring("", "")
     0
+    >>> index_of_substring("aaaaaaaaaaaa", "b")
+    -1
     """
     if substring in sentence:
         return sentence.find(substring)
@@ -51,6 +53,7 @@ def index_of_substring(sentence, substring):
 
 
 def main():
+    doctest.testmod()
     ids = [4353, 2314, 2956, 3382, 9362, 3900]
     print(ids)
     ids.remove(3382)
