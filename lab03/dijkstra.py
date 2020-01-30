@@ -61,6 +61,9 @@ def colour_sorting(colour_list):
 
 
 def main():
+    """
+    Run the functions in the module.
+    """
     dutch_flag = ["red", "blue", "blue", "white", "red", "white"]
     dijkstra(dutch_flag)
     print(dutch_flag)
