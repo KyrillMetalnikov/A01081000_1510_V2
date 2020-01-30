@@ -40,7 +40,7 @@ def index_of_substring(sentence, substring):
     :return: an integer that represents either the index of the substring or -1 if the substring is not in the sentence.
     >>> index_of_substring("0123456789", "4")
     4
-    >>> index_of_substring("Hello how are you doing", "are")
+    >>> index_of_substring("Hello how are you doing are", "are")
     10
     >>> index_of_substring("", "")
     0
