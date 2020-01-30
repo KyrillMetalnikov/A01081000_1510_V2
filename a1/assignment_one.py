@@ -1,5 +1,5 @@
 """
-The module contains a variety of different functions and their helpers.
+Contain and run a variety of different functions and their helpers.
 """
 import math
 import random
@@ -61,8 +61,7 @@ def convert_to_roman_numeral(positive_int):
 
     Uses a variety of helper functions to convert a number between 1-10000 to roman numerals then prints it on screen.
     For this function I used decomposition by splitting the function into a few separate functions.  I also used pattern
-    matching by reusing structures with only different parameters in order to save space.  I also used automation by not
-    requiring a user input in the program and automatically displaying the result to the user.
+    matching by reusing structures with only different parameters in order to save space.
     :param positive_int: The number being converted to roman numerals: type int
     :precondition: Input an integer between 1-10000
     :postcondition: The correct roman numeral will be displayed on screen
@@ -107,8 +106,8 @@ def colour_mixer():
     Mix two primary colours together.
 
     User inputs two primary colours and the function displays what colour is created when the two colours are mixed.
-    I used automation by having the program automatically check and output the colour that would result from mixing two
-    primary colours.
+    I used pattern matching to organize the code as the if statements are almost identical so i can group them
+    together.
     :precondition: Each input must be a primary colour (red, yellow, blue) and both inputs have to be different colours.
     :postcondition: Function will display the mixed colour.
     :return: no return
@@ -124,16 +123,16 @@ def colour_mixer():
     elif "yellow" in two_colours and "blue" in two_colours:
         print("You have created green!")
     else:
-        print("error: Please input two different primary colours for me to mix")
+        print("error: Please input two different primary colours for me to mix (red, yellow, or blue")
 
 
 def time_calculator(seconds):
     """
     Print how many days, hours, minutes and seconds there are in a certain number of seconds.
 
-    I used automation by having the function do basic math and organization instead of the user.  I used pattern
-    matching by seeing that other than the denominator, it is all the same equation so I kept it in the same area.
-    I also used the algorithm of / and % to find the day hour minute seconds.
+    I used pattern matching in this program as it is the same sequence of math operations just with a different
+    denominator.  I also used the algorithm of doing days, hours, minutes, and then seconds as that makes the function
+    be able to take any positive integer value and still be able to provide an accurate output.
     :param seconds: A positive integer that represents an amount of seconds
     :precondition: Number must be a positive integer
     :postcondition: Calculates how many days, hours, minutes and seconds there are in that number.
@@ -159,8 +158,9 @@ def compound_interest(principal, annual_interest_rate, number_of_yearly_compound
     Return how much money I will have after my interest compounds.
 
     Uses the compound interest formula to calculate how much money will be had after acquiring interest for a set time.
+
     I used the algorithm a= p(1+i/n)^nt to find how much money would be in an account after acquiring interest for a set
-    period of time.  There is also automation as the function does not require any user input.
+    period of time.
     :param principal: The amount of money that was originally deposited into the account: type float
     :param annual_interest_rate: The amount of yearly interest made on that account: type float
     :param number_of_yearly_compounds: The amount of times the interest compounds per year: type int
@@ -181,7 +181,7 @@ def rock_paper_scissors():
     """
     Play a round of rock, paper, scissors.
 
-    I used 
+    I pattern matched all the blocks of code together, as the only difference between them is the possible outputs.
     :return: no return
     """
     list_of_options = ["rock", "paper", "scissors"]
@@ -215,12 +215,21 @@ def number_generator(min_number, max_number, amount_of_digits):
     """
     Generate a list of random numbers.
 
-    :return: returns a list of random unique numbers..
+    I decomposed this function by spreading out what I needed to do.  I first make a list of possible numbers, then
+    I randomly pick from those numbers, and then I sort them from smallest to greatest instead of doing it all in go.
+    I also used abstraction as I realized that instead of just making a 6 digit number, I can set it up so it can make
+    any number of numbers with whatever parameter I want.
+    :param min_number: Integer for the smallest number possible in the random number
+    :param max_number: Integer for the largest number possible in the random number
+    :param amount_of_digits: Positive non-zero integer for the amount of random numbers pulled
+    :precondition: Follow the rules for the param and have the max_number be greater than the min_number
+    :postcondition:
+    :return: returns a list of random unique numbers:
     """
-    lottery_numbers = []
+    list_of_numbers = []
     for i in range(min_number, max_number):
-        lottery_numbers.append(i + 1)
-    draw = random.sample(lottery_numbers, amount_of_digits)
+        list_of_numbers.append(i + 1)
+    draw = random.sample(list_of_numbers, amount_of_digits)
     return sorted(draw)
 
 
@@ -228,6 +237,8 @@ def number_translator():
     """
     Convert letters in a phone number to numbers.
 
+    I used pattern recognition as the if statement repeated in the same pattern so i grouped them all in blocks.  I also
+    used decomposition as I used a helper function to separate the characters in the phone number.
     :return: The new phone number with no letters: type string
     """
     print("Hello!  Please enter your phone number and we will convert all letters to numbers!")

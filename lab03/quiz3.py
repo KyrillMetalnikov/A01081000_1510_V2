@@ -26,7 +26,7 @@ def average_three_greatest_ints(int1, int2, int3, int4):
     """
     grades_list = [int1, int2, int3, int4]
     grades_list.sort()
-    return (grades_list[1] + grades_list[2] + grades_list[3])/3
+    return (grades_list[-1] + grades_list[-2] + grades_list[-3])/3
 
 
 def index_of_substring(sentence, substring):
