@@ -14,15 +14,15 @@ def average_three_greatest_ints(int1, int2, int3, int4):
     :param int2: an integer that represents a grade.
     :param int3: an integer that represents a grade.
     :param int4: an integer that represents a grade.
-    :precondition: provide acceptable arguments according to the PARAM statements above.
+    :precondition: provide integers between 0-100 for all params
     :postcondition: return an object according to the return value below.
     :return: a float that represents the average of the three highest grades.
     >>> average_three_greatest_ints(1, 2, 3, 4)
     3.0
     >>> average_three_greatest_ints(0, 0, 0, 0)
     0.0
-    >>> average_three_greatest_ints(1000, 7000, 9000, 14000)
-    10000.0
+    >>> average_three_greatest_ints(10, 100, 100, 100)
+    100.0
     """
     grades_list = [int1, int2, int3, int4]
     grades_list.sort()
@@ -32,6 +32,7 @@ def average_three_greatest_ints(int1, int2, int3, int4):
 def index_of_substring(sentence, substring):
     """
     Return the index of a substring in another string if that string contains the substring.
+
     :param sentence: a string.
     :param substring: a string.
     :precondition: valid arguments are provided as defined by the PARAM statements above.
