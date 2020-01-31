@@ -6,6 +6,52 @@ import random
 import doctest
 
 
+def convert_to_roman_numeral(positive_int):
+    """
+    Convert a number to roman numerals then print it out.
+
+    Uses a variety of helper functions to convert a number between 1-10000 to roman numerals then prints it on screen.
+    For this function I used decomposition by splitting the function into a few separate functions.  I also used pattern
+    matching by reusing structures with only different parameters in order to save space.
+    :param positive_int: The number being converted to roman numerals: type int
+    :precondition: Input an integer between 1-10000
+    :postcondition: The correct roman numeral will be displayed on screen
+    :return: no return
+
+    >>> convert_to_roman_numeral(5)
+    '5 in roman numerals is V'
+    >>> convert_to_roman_numeral(50)
+    '50 in roman numerals is L'
+    >>> convert_to_roman_numeral(785)
+    '785 in roman numerals is DCCLXXXV'
+    >>> convert_to_roman_numeral(3579)
+    '3579 in roman numerals is MMMDLXXIX'
+    >>> convert_to_roman_numeral(10000)
+    '10000 in roman numerals is MMMMMMMMMM'
+    """
+
+    positive_int = str(positive_int)
+    if len(positive_int) == 5:
+        return positive_int + " in roman numerals is MMMMMMMMMM"
+    elif len(positive_int) == 4:  # used if the number's between 1000-9999
+        return (positive_int + " in roman numerals is " + "M" * int(separate_chars(positive_int)[0])
+                + str(find_roman_digit(separate_chars(positive_int)[1], "C", "D", "M"))
+                + str(find_roman_digit(separate_chars(positive_int)[2], "X", "L", "C"))
+                + str(find_roman_digit(separate_chars(positive_int)[3], "I", "V", "X")))
+    elif len(positive_int) == 3:  # used if the number's between 100-999
+        return (positive_int + " in roman numerals is "
+                + str(find_roman_digit(separate_chars(positive_int)[0], "C", "D", "M"))
+                + str(find_roman_digit(separate_chars(positive_int)[1], "X", "L", "C"))
+                + str(find_roman_digit(separate_chars(positive_int)[2], "I", "V", "X")))
+    elif len(positive_int) == 2:  # used if the number's between 10-99
+        return (positive_int + " in roman numerals is "
+                + str(find_roman_digit(separate_chars(positive_int)[0], "X", "L", "C"))
+                + str(find_roman_digit(separate_chars(positive_int)[1], "I", "V", "X")))
+    elif len(positive_int) == 1:  # used if the number's between 1 - 9
+        return (positive_int + " in roman numerals is "
+                + find_roman_digit(separate_chars(positive_int)[0], "I", "V", "X"))
+
+
 def find_roman_digit(digit, ones, fives, tens):
     """
     Convert a digit to roman numerals.
@@ -37,68 +83,6 @@ def find_roman_digit(digit, ones, fives, tens):
         return ones + tens
     else:
         return ""
-
-
-def separate_chars(string_of_chars):
-    """
-    Convert a string into a list of separate characters.
-
-    :param string_of_chars: The grouping of characters to separate. Type: all types
-    :precondition: You must input at least one character
-    :postcondition: Will output a list of separate characters
-    :return: returns list of each character separated
-    """
-    list_of_chars = []
-
-    for i in str(string_of_chars):
-        list_of_chars.append(i)
-    return list_of_chars
-
-
-def convert_to_roman_numeral(positive_int):
-    """
-    Convert a number to roman numerals then print it out.
-
-    Uses a variety of helper functions to convert a number between 1-10000 to roman numerals then prints it on screen.
-    For this function I used decomposition by splitting the function into a few separate functions.  I also used pattern
-    matching by reusing structures with only different parameters in order to save space.
-    :param positive_int: The number being converted to roman numerals: type int
-    :precondition: Input an integer between 1-10000
-    :postcondition: The correct roman numeral will be displayed on screen
-    :return: no return
-
-    >>> convert_to_roman_numeral(5)
-    '5 in roman numerals is V'
-    >>> convert_to_roman_numeral(50)
-    '50 in roman numerals is L'
-    >>> convert_to_roman_numeral(785)
-    '785 in roman numerals is DCCLXXXV'
-    >>> convert_to_roman_numeral(3579)
-    '3579 in roman numerals is MMMDLXXIX'
-    >>> convert_to_roman_numeral(10000)
-    '10000 in roman numerals is MMMMMMMMMM'
-    """
-
-    positive_int = str(positive_int)
-    if len(positive_int) == 5:
-        return positive_int + " in roman numerals is MMMMMMMMMM"
-    elif len(positive_int) == 4:  # used if the number's between 1000-9999
-        return (positive_int + " in roman numerals is " + "M" * int(separate_chars(positive_int)[0])
-              + str(find_roman_digit(separate_chars(positive_int)[1], "C", "D", "M"))
-              + str(find_roman_digit(separate_chars(positive_int)[2], "X", "L", "C"))
-              + str(find_roman_digit(separate_chars(positive_int)[3], "I", "V", "X")))
-    elif len(positive_int) == 3:  # used if the number's between 100-999
-        return (positive_int + " in roman numerals is "
-              + str(find_roman_digit(separate_chars(positive_int)[0], "C", "D", "M"))
-              + str(find_roman_digit(separate_chars(positive_int)[1], "X", "L", "C"))
-              + str(find_roman_digit(separate_chars(positive_int)[2], "I", "V", "X")))
-    elif len(positive_int) == 2:  # used if the number's between 10-99
-        return (positive_int + " in roman numerals is "
-              + str(find_roman_digit(separate_chars(positive_int)[0], "X", "L", "C"))
-              + str(find_roman_digit(separate_chars(positive_int)[1], "I", "V", "X")))
-    elif len(positive_int) == 1:  # used if the number's between 1 - 9
-        return (positive_int + " in roman numerals is "
-              + find_roman_digit(separate_chars(positive_int)[0], "I", "V", "X"))
 
 
 def colour_mixer():
@@ -182,6 +166,8 @@ def rock_paper_scissors():
     Play a round of rock, paper, scissors.
 
     I pattern matched all the blocks of code together, as the only difference between them is the possible outputs.
+    :precondition: You will only input either "rock", "paper" or "scissors"
+    :postcondition:  You will experience a game of rock paper scissors.
     :return: no return
     """
     list_of_options = ["rock", "paper", "scissors"]
@@ -211,7 +197,7 @@ def rock_paper_scissors():
         print("You and your opponent both picked " + user_input + ".  You tied!")
 
 
-def number_generator(min_number, max_number, amount_of_digits):
+def number_generator():
     """
     Generate a list of random numbers.
 
@@ -219,17 +205,14 @@ def number_generator(min_number, max_number, amount_of_digits):
     I randomly pick from those numbers, and then I sort them from smallest to greatest instead of doing it all in go.
     I also used abstraction as I realized that instead of just making a 6 digit number, I can set it up so it can make
     any number of numbers with whatever parameter I want.
-    :param min_number: Integer for the smallest number possible in the random number
-    :param max_number: Integer for the largest number possible in the random number
-    :param amount_of_digits: Positive non-zero integer for the amount of random numbers pulled
-    :precondition: Follow the rules for the param and have the max_number be greater than the min_number
-    :postcondition:
-    :return: returns a list of random unique numbers:
+    :precondition: Don't write any parameters.
+    :postcondition: You will get 6 random unique numbers from 1-49
+    :return: returns a list of random unique integers
     """
     list_of_numbers = []
-    for i in range(min_number, max_number):
+    for i in range(1, 49):
         list_of_numbers.append(i + 1)
-    draw = random.sample(list_of_numbers, amount_of_digits)
+    draw = random.sample(list_of_numbers, 6)
     return sorted(draw)
 
 
@@ -239,6 +222,8 @@ def number_translator():
 
     I used pattern recognition as the if statement repeated in the same pattern so i grouped them all in blocks.  I also
     used decomposition as I used a helper function to separate the characters in the phone number.
+    :precondition: You will input a 10 digit phone number formatted XXX-XXX-XXXX
+    :postcondition: YOu will receive a phone numbers with only numbers and dashes
     :return: The new phone number with no letters: type string
     """
     print("Hello!  Please enter your phone number and we will convert all letters to numbers!")
@@ -283,6 +268,28 @@ def number_translator():
     return "".join(phone_number)
 
 
+def separate_chars(string_of_chars):
+    """
+    Convert a string into a list of separate characters.
+
+    :param string_of_chars: The grouping of characters to separate. Type: all types
+    :precondition: You must input at least one character
+    :postcondition: Will output a list of separate characters
+    :return: returns list of each character separated
+    >>> separate_chars("wagu beef")
+    ['w', 'a', 'g', 'u', ' ', 'b', 'e', 'e', 'f']
+    >>> separate_chars("Kyrill")
+    ['K', 'y', 'r', 'i', 'l', 'l']
+    >>> separate_chars("E")
+    ['E']
+    """
+    list_of_chars = []
+
+    for i in str(string_of_chars):
+        list_of_chars.append(i)
+    return list_of_chars
+
+
 def main():
     """
     Run all the functions in this module.
@@ -295,7 +302,7 @@ def main():
     # time_calculator(70)
     # print(compound_interest(5000, 0.05, 24, 0.5))
     # rock_paper_scissors()
-    # print(number_generator(-100, 1000, 25))
+    print(number_generator())
     # print(number_translator())
 
 
