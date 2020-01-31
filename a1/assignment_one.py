@@ -12,7 +12,8 @@ def convert_to_roman_numeral(positive_int):
 
     Uses a variety of helper functions to convert a number between 1-10000 to roman numerals then prints it on screen.
     For this function I used decomposition by splitting the function into a few separate functions.  I also used pattern
-    matching by reusing structures with only different parameters in order to save space.
+    matching by reusing structures with only different parameters in order to save space.  I have also used an
+    algorithm to find the roman representation of each individual digit rather than doing it as a whole.
     :param positive_int: The number being converted to roman numerals: type int
     :precondition: Input an integer between 1-10000
     :postcondition: The correct roman numeral will be displayed on screen
@@ -296,14 +297,14 @@ def main():
 
     :return: no return
     """
-    # convert_to_roman_numeral(5)
-    # convert_to_roman_numeral(3579)
-    # colour_mixer()
-    # time_calculator(70)
-    # print(compound_interest(5000, 0.05, 24, 0.5))
-    # rock_paper_scissors()
+    convert_to_roman_numeral(5)
+    convert_to_roman_numeral(3579)
+    colour_mixer()
+    time_calculator(70)
+    print(compound_interest(5000, 0.05, 24, 0.5))
+    rock_paper_scissors()
     print(number_generator())
-    # print(number_translator())
+    print(number_translator())
 
 
 if __name__ == "__main__":
