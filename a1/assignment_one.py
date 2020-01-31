@@ -203,8 +203,8 @@ def number_generator():
 
     I decomposed this function by spreading out what I needed to do.  I first make a list of possible numbers, then
     I randomly pick from those numbers, and then I sort them from smallest to greatest instead of doing it all in go.
-    I also used abstraction as I realized that instead of just making a 6 digit number, I can set it up so it can make
-    any number of numbers with whatever parameter I want.
+    I haven't used abstraction for this function as that didn't fit the requirement, but I can see how I could make this
+    work as a random number generator for any size numbers and as many random numbers as the computer can hold.
     :precondition: Don't write any parameters.
     :postcondition: You will get 6 random unique numbers from 1-49
     :return: returns a list of random unique integers
