@@ -297,16 +297,8 @@ def main():
 
     :return: no return
     """
-    convert_to_roman_numeral(5)
-    convert_to_roman_numeral(3579)
-    colour_mixer()
-    time_calculator(70)
-    print(compound_interest(5000, 0.05, 24, 0.5))
-    rock_paper_scissors()
-    print(number_generator())
-    print(number_translator())
+    doctest.testmod()
 
 
 if __name__ == "__main__":
-    doctest.testmod()
     main()
