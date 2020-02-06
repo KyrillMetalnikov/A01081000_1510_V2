@@ -10,6 +10,8 @@ def eratosthenes(upperbound):
     :precondition: upperbound must be a positive integer
     :postcondition: The function will return all the prime numbers less than the upperbound in a list
     :return: A list of all prime numbers between 0 and upperbound
+    >>> eratosthenes(0)
+    []
     >>> eratosthenes(1)
     []
     >>> eratosthenes(2)

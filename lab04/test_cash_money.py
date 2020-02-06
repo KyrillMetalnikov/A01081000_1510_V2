@@ -23,7 +23,7 @@ class Test(TestCase):
         self.assertEqual(expected, argument, "The list is all non-zeroes")
 
     def test_cash_money_big_number(self):
-        """Test cash_money where every list is non-zero."""
+        """Test cash_money with a large parameter input."""
         argument = lab04.cash_money(1000000)
         expected = [10000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         self.assertEqual(expected, argument, "The list has a large first element")
