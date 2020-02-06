@@ -35,7 +35,58 @@ def eratosthenes(upperbound):
 
 
 def cash_money(money):
+    """
+    Find the lowest denomination of bills/coins possible in a value.
 
+    :param money: A positive float up to two decimals that represents a monetary value
+    :precondition: Must follow the rules of the parameter
+    :postcondition: Function will find the lowest denomination
+    :return: returns a list of the number of bills/coins during the denomination
+    >>> cash_money(0)
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    >>> cash_money(188.88)
+    [1, 1, 1, 1, 1, 1, 1, 3, 1, 0, 3]
+    >>> cash_money(5000)
+    [50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    """
+    money = money * 100
+    money_denominations = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    while money > 0:
+        if (money / 10000) >= 1:
+            money_denominations[0] = int(money / 10000)
+            money %= 10000
+        if (money / 5000) >= 1:
+            money_denominations[1] = int(money // 5000)
+            money %= 5000
+        if (money / 2000) > 1:
+            money_denominations[2] = int(money // 2000)
+            money %= 2000
+        if (money / 1000) >= 1:
+            money_denominations[3] = int(money // 1000)
+            money %= 1000
+        if (money / 500) >= 1:
+            money_denominations[4] = int(money // 500)
+            money %= 500
+        if (money / 200) > 1:
+            money_denominations[5] = int(money // 200)
+            money %= 200
+        if (money / 100) >= 1:
+            money_denominations[6] = int(money // 100)
+            money %= 100
+        if (money / 25) >= 1:
+            money_denominations[7] = int(money // 25)
+            money %= 25
+        if (money / 10) >= 1:
+            money_denominations[8] = int(money // 10)
+            money %= 10
+        if (money / 5) >= 1:
+            money_denominations[9] = int(money // 5)
+            money %= 5
+        if (money / 1) >= 1:
+            money_denominations[10] = int(money // 1)
+            money %= 1
+
+    return money_denominations
 
 
 def main():
