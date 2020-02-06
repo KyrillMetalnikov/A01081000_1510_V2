@@ -1,5 +1,5 @@
 import doctest
-"""Run statistics function."""
+"""Run statistics function. Partnered with Daniel Liu."""
 
 
 def statistics(stats_list):
