@@ -44,8 +44,8 @@ def cash_money(money):
     :return: returns a list of the number of bills/coins during the denomination
     >>> cash_money(0)
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-    >>> cash_money(188.88)
-    [1, 1, 1, 1, 1, 1, 1, 3, 1, 0, 3]
+    >>> cash_money(188.93)
+    [1, 1, 1, 1, 1, 1, 1, 3, 1, 1, 3]
     >>> cash_money(5000)
     [50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     """
