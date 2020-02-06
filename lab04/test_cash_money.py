@@ -72,6 +72,12 @@ class Test(TestCase):
         expected = [0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
         self.assertEqual(expected, argument, "The tens element is the only non-zero element")
 
+    def test_cash_money_ten_dollars_twenty_seven_cents(self):
+        """Test cash_money for ten dollars."""
+        argument = lab04.cash_money(10.27)
+        expected = [0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2]
+        self.assertEqual(expected, argument, "The tens element and the pennies and quarter are non-zero")
+
     def test_cash_money_twenty_dollars(self):
         """Test cash_money for twenty dollars."""
         argument = lab04.cash_money(20.00)
