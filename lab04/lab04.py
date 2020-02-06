@@ -1,6 +1,8 @@
 import math
 import doctest
 
+"""Run the functions inside the module."""
+
 
 def eratosthenes(upperbound):
     """
