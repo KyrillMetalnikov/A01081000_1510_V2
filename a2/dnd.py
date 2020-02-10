@@ -24,10 +24,20 @@ def generate_name(syllables):
 def generate_vowel():
     """
     Generate a random vowel.
+
     :precondition: Provide the function with no inputs.
     :postcondition: Will create a single random vowel.
     :return: A vowel in string format.
     """
-    vowels = ['a', 'e', 'i', 'o', 'u', 'y']
-    return random.choice(vowels)
+    return random.choice("aeiouy")
 
+
+def generate_consonant():
+    """
+    Generate a random consonant.
+
+    :precondition: Provide the function with no inputs.
+    :postcondition: Will create a single random consonant.
+    :return: A consonant in in string format.
+    """
+    return random.choice("bcdfghjklmnpqrstvwxyz")
