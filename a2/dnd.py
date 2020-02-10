@@ -26,7 +26,7 @@ def generate_vowel():
     Generate a random vowel.
     :precondition: Provide the function with no inputs.
     :postcondition: Will create a single random vowel.
-    :return: A vowel in
+    :return: A vowel in string format.
     """
     vowels = ['a', 'e', 'i', 'o', 'u', 'y']
     return random.choice(vowels)
