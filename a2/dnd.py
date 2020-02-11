@@ -65,3 +65,47 @@ def generate_syllable():
     """
 
     return (generate_consonant() + generate_vowel()).join()
+
+
+def create_character(syllables):
+    if type(syllables) != int or syllables < 1:
+        print("Error: Please make sure you're only inputting a positive non-zero integer.")
+        return None
+    else:
+        character = {"Name": generate_name(syllables),
+                     "Strength": roll_die(3, 6),
+                     "Dexterity": roll_die(3, 6),
+                     "Intelligence": roll_die(3, 6),
+                     "Charisma": roll_die(3, 6),
+                     "Wisdom": roll_die(3, 6),
+                     "Constitution": roll_die(3, 6),
+                     "Inventory": [],
+                     "XP": 0}
+
+
+def select_class():
+    """
+    Display all dnd classes, then let user pick a class.
+
+    :precondition: User will only input integers between 1-12 inclusive
+    :postcondition: The function will return the name of the corresponding class.
+    :return: Name of the class in string format.
+    """
+    classes = {1: "barbarian",
+               2: "bard",
+               3: "cleric",
+               4: "druid",
+               5: "fighter",
+               6: "monk",
+               7: "paladin",
+               8: "ranger",
+               9: "rogue",
+               10: "sorcerer",
+               11: "warlock",
+               12: "wizard"}
+
+    for key, value in enumerate(classes):
+        print(key, value)
+
+    user_input = input("Please input the number of the class you wish to play!")
+    return classes[user_input]
