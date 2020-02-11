@@ -69,8 +69,18 @@ def generate_syllable():
 
 
 def create_character(syllables):
+    """
+    Create a Dungeons and Dragons Character.
+
+    Creates a character by randomly generating a name, randomly generating the 6 core stats, adding an empty inventory,
+    setting the race, setting the class, adding an xp counter that starts at 0, and setting the max hp.
+    :param syllables: A positive integer representing the number of syllables in the name.
+    :precondition: Syllables must be a positive integer.
+    :postcondition: A randomized character will be created.
+    :return: Returns a dictionary with the character information.
+    """
     if type(syllables) != int or syllables < 1:
-        print("Error: Please make sure you're only inputting a positive non-zero integer.")
+        print("Error: Please make sure you're only inputting a positive integer.")
         return None
     else:
         character = {"Name": generate_name(syllables),
@@ -84,6 +94,11 @@ def create_character(syllables):
                      "XP": 0,
                      "Class": select_class(),
                      "Race": select_race()}
+
+        max_health = set_hitpoints(character)
+        current_health = max_health
+        character["HP"] = [max_health, current_health]
+        return character
 
 
 def select_class():
@@ -138,6 +153,22 @@ def select_race():
 
     user_input = int(input("Please input the number of the race you wish to play!"))
     return races[user_input]
+
+
+def set_hitpoints(character):
+    """
+    Set the hitpoints of a character.
+
+    Sets the hitpoints of a character based on the value of hit
+    """
+    if character["Race"] == "barbarian":
+        return roll_die(1, 12)  # Roll a 12 sided die to set hitpoints.
+    elif character["Race"] == "fighter" or character["Race"] == "paladin" or character["Race"] == "ranger":
+        return roll_die(1, 10)  # roll a 10 sided die to set hitpoints.
+    elif character["Race"] == "sorcerer" or character["Race"] == "wizard":
+        return roll_die(1, 6)  # roll a 6 sided die to set hitpoints.
+    else:
+        return roll_die(1, 8)  # Only other value left to set hitpoints with.
 
 
 def main():
