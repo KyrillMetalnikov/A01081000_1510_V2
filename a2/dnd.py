@@ -18,7 +18,19 @@ def roll_die(number_of_rolls, number_of_sides):
 
 
 def generate_name(syllables):
+    """
+    Create a random name.
+
+    :param syllables: A positive non-zero integer representing the number of syllables in the random name.
+    :precondition: The rules of the parameter are followed.
+    :postcondition: A random name of specified syllables will be created.
+    :return: Returns a string representing a random name.
+    """
+    name = ""
     for i in range(0, syllables + 1):
+        name += generate_syllable()
+    return name
+
 
 
 def generate_vowel():
