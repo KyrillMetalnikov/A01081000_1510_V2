@@ -26,7 +26,7 @@ def generate_vowel():
     Generate a random vowel.
 
     :precondition: Provide the function with no inputs.
-    :postcondition: Will create a single random vowel.
+    :postcondition: Function will create a single random vowel.
     :return: A vowel in string format.
     """
     return random.choice("aeiouy")
@@ -37,7 +37,19 @@ def generate_consonant():
     Generate a random consonant.
 
     :precondition: Provide the function with no inputs.
-    :postcondition: Will create a single random consonant.
+    :postcondition: Function will create a single random consonant.
     :return: A consonant in in string format.
     """
     return random.choice("bcdfghjklmnpqrstvwxyz")
+
+
+def generate_syllable():
+    """
+    Generate a random syllable of one consonant and one vowel.
+
+    :precondition: Provide no inputs into the function.
+    :postcondition: Function will create a single random syllable.
+    :return: A two character syllable in string format.
+    """
+
+    return (generate_consonant() + generate_vowel()).join()
