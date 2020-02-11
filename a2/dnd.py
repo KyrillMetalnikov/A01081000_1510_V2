@@ -1,3 +1,4 @@
+"""Create an iteration of a DND game."""
 import random
 
 
@@ -80,7 +81,9 @@ def create_character(syllables):
                      "Wisdom": roll_die(3, 6),
                      "Constitution": roll_die(3, 6),
                      "Inventory": [],
-                     "XP": 0}
+                     "XP": 0,
+                     "Class": select_class(),
+                     "Race": select_race()}
 
 
 def select_class():
@@ -107,5 +110,31 @@ def select_class():
     for key, value in enumerate(classes):
         print(key, value)
 
-    user_input = input("Please input the number of the class you wish to play!")
+    user_input = int(input("Please input the number of the class you wish to play!"))
     return classes[user_input]
+
+
+def select_race():
+    """
+    Display all dnd races, then let user pick a race.
+
+    :precondition: User will only input integers between 1-9 inclusive.
+    :postcondition: The function will return the name of the corresponding race
+    :return: Name of the race in string format.
+    """
+
+    races = {1: "dragonborn",
+             2: "dwarf",
+             3: "elf",
+             4: "gnome",
+             5: "half-elf",
+             6: "halfling",
+             7: "half-orc",
+             8: "human",
+             9: "tiefling"}
+
+    for key, value in enumerate(races):
+        print(key, value)
+
+    user_input = int(input("Please input the number of the race you wish to play!"))
+    return races[user_input]
