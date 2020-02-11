@@ -107,7 +107,7 @@ def select_class():
                11: "warlock",
                12: "wizard"}
 
-    for key, value in enumerate(classes):
+    for key, value in classes.items():
         print(key, value)
 
     user_input = int(input("Please input the number of the class you wish to play!"))
@@ -133,8 +133,16 @@ def select_race():
              8: "human",
              9: "tiefling"}
 
-    for key, value in enumerate(races):
+    for key, value in races.items():
         print(key, value)
 
     user_input = int(input("Please input the number of the race you wish to play!"))
     return races[user_input]
+
+
+def main():
+    print(select_race())
+
+
+if __name__ == "__main__":
+    main()
