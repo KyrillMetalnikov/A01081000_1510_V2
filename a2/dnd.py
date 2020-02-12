@@ -1,5 +1,6 @@
 """Create an iteration of a DND game."""
 import random
+import doctest
 
 
 def roll_die(number_of_rolls, number_of_sides):
@@ -31,7 +32,6 @@ def generate_name(syllables):
     for i in range(0, syllables + 1):
         name += generate_syllable()
     return name
-
 
 
 def generate_vowel():
@@ -171,8 +171,35 @@ def set_hitpoints(character):
         return roll_die(1, 8)  # Only other value left to set hitpoints with.
 
 
+def print_character(character):
+    """
+    Display the details of a character.
+
+    :param character: A dictionary with character details.
+    :precondition: The parameter character is a properly formatted dictionary
+    :postcondition: The characters details will be displayed
+    >>> character = {}
+    >>> character["Name"] = "ji"
+    >>> character["Strength"] = 5
+    >>> character["Dexterity"] = 3
+    >>> character["Intelligence"] = 3
+    >>> character["Inventory"] = []
+    >>> character["XP"] = 0
+    >>> character["Class"] = "monk"
+    >>> character["Race"] = "elf"
+    >>> print_character(character)
+    {'Name': 'ji', 'Strength': 5, 'Dexterity': 3, 'Intelligence': 3, 'Inventory': [], 'XP': 0, 'Class': 'monk', 'Race': 'elf'}
+    """
+    print(character)
+
+
+def choose_inventory():
+
+
+
 def main():
-    print(select_race())
+    # print(select_race())
+    doctest.testmod()
 
 
 if __name__ == "__main__":
