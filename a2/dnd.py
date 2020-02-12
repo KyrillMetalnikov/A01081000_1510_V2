@@ -239,9 +239,34 @@ def choose_inventory(character):
     character["Inventory"] = new_inventory
 
 
+def combat_round(opponent_one, opponent_two):
+    first_turn = roll_for_initiative()
+    if first_turn == True:
+        combat_round
+
+
+
+def roll_for_initiative():
+    """
+    Roll an initiative.
+
+    :precondition: No parameters are inputted into the function.
+    :postcondition: Will decide who goes first.
+    :return: A boolean value if someone goes first or not.
+    """
+    while True:
+        roll_1 = roll_die(1, 20)
+        roll_2 = roll_die(1, 20)
+        if roll_1 > roll_2:
+            return True
+        if roll_2 > roll_1:
+            return False
+
+
 def main():
     # print_character(create_character(input("How many syllables do you want in your name?")))
-    doctest.testmod()
+    # doctest.testmod()
+    print(roll_for_initiative())
 
 
 if __name__ == "__main__":
