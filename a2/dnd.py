@@ -29,7 +29,7 @@ def generate_name(syllables):
     :return: Returns a string representing a random name.
     """
     name = ""
-    for i in range(0, syllables + 1):
+    for i in range(0, syllables):
         name += generate_syllable()
     return name
 
@@ -65,7 +65,7 @@ def generate_syllable():
     :return: A two character syllable in string format.
     """
 
-    return (generate_consonant() + generate_vowel()).join()
+    return generate_consonant() + generate_vowel()
 
 
 def create_character(syllables):
@@ -79,11 +79,11 @@ def create_character(syllables):
     :postcondition: A randomized character will be created.
     :return: Returns a dictionary with the character information.
     """
-    if type(syllables) != int or syllables < 1:
+    if int(syllables) < 1:
         print("Error: Please make sure you're only inputting a positive integer.")
         return None
     else:
-        character = {"Name": generate_name(syllables),
+        character = {"Name": (generate_name(int(syllables)).title()),
                      "Strength": roll_die(3, 6),
                      "Dexterity": roll_die(3, 6),
                      "Intelligence": roll_die(3, 6),
@@ -193,12 +193,54 @@ def print_character(character):
     print(character)
 
 
-def choose_inventory():
+def choose_inventory(character):
+    """
+    Display items in a store, then let the customer buy them.
 
+    :param character: A properly formatted character dictionary
+    :precondition: Follow the rules of the param
+    :postcondition: The store will be fully operation
+    """
+    store_inventory = {1: "Thumbtacks of blindness", 2: "Double edged dagger", 3: "Double handled dagger",
+                       4: "Longsword of bluntness", 5: "Railroads for Dummies", 6: "Ring of Detect Rings"}
+
+    user_input = ""
+    new_inventory = []
+    while user_input != "-1":
+        print("""
+            Welcome to Cheatskape's general store!
+            Here are my wares but choose wisely!
+        
+            1: Thumbtacks of blindness
+            2: Double edged dagger
+            3: Double handled dagger
+            4: Longsword of bluntness
+            5: Railroads for Dummies
+            6: Ring of Detect Rings
+            
+            What would you like to buy? (-1 to finish)
+            """)
+
+        user_input = input()
+        if int(user_input) == int(1) or user_input.strip().lower() == "thumbtacks of blindness":
+            new_inventory.append(store_inventory[1])
+        elif int(user_input) == int(2) or user_input.strip().lower() == "double edged dagger":
+            new_inventory.append(store_inventory[2])
+        elif int(user_input) == int(3) or user_input.strip().lower() == "double handled dagger":
+            new_inventory.append(store_inventory[3])
+        elif int(user_input) == int(4) or user_input.strip().lower() == "longsword of bluntness":
+            new_inventory.append(store_inventory[4])
+        elif int(user_input) == int(5) or user_input.strip().lower() == "railroads for Dummies":
+            new_inventory.append(store_inventory[5])
+        elif int(user_input) == int(6) or user_input.strip().lower() == "ring of Detect Rings":
+            new_inventory.append(store_inventory[6])
+        else:
+            print("Please type either the name of the item, the number of the item, or -1 to leave the shop.")
+    character["Inventory"] = new_inventory
 
 
 def main():
-    # print(select_race())
+    # print_character(create_character(input("How many syllables do you want in your name?")))
     doctest.testmod()
 
 
