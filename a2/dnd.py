@@ -95,7 +95,7 @@ def create_character(syllables):
                      "Class": select_class(),
                      "Race": select_race()}
 
-        max_health = set_hitpoints(character)
+        max_health = roll_hitpoints(character)
         current_health = max_health
         character["HP"] = [max_health, current_health]
         return character
@@ -155,7 +155,7 @@ def select_race():
     return races[user_input]
 
 
-def set_hitpoints(character):
+def roll_hitpoints(character):
     """
     Set the hitpoints of a character.
 
@@ -234,9 +234,12 @@ def choose_inventory(character):
             new_inventory.append(store_inventory[5])
         elif int(user_input) == int(6) or user_input.strip().lower() == "ring of Detect Rings":
             new_inventory.append(store_inventory[6])
+        elif int(user_input) == int(-1):
+            continue
         else:
             print("Please type either the name of the item, the number of the item, or -1 to leave the shop.")
     character["Inventory"] = new_inventory
+    print(character)
 
 
 def combat_round(opponent_one, opponent_two):
@@ -244,6 +247,21 @@ def combat_round(opponent_one, opponent_two):
     if first_turn == True:
         combat_round
 
+
+
+def single_attack(attacker, defender):
+    """
+    Complete a single attack attempt.
+
+    :param attacker: A properly formatted character dictionary.
+    :param defender: A properly formatted character dictionary.
+    :precondition: Both params must be different characters that are properly formatted.
+    :postcondition: A single attack will be properly completed.
+    """
+    attack_attempt = roll_die(1, 20)
+    if attack_attempt > defender["Dexterity"]:
+        damage = roll_die(1, roll_hitpoints(attacker))
+        defender["HP"[1]] -= damage
 
 
 def roll_for_initiative():
@@ -266,7 +284,8 @@ def roll_for_initiative():
 def main():
     # print_character(create_character(input("How many syllables do you want in your name?")))
     # doctest.testmod()
-    print(roll_for_initiative())
+    # print(roll_for_initiative())
+    # choose_inventory(create_character(input("How many syllables do you want in your name?")))
 
 
 if __name__ == "__main__":
