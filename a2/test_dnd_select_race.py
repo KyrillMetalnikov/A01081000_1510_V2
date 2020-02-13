@@ -9,3 +9,9 @@ class Test(TestCase):
         expected = "dragonborn"
         actual = dnd.select_race()
         self.assertEqual(expected, actual)
+
+    @patch("builtins.input", side_effect="5")
+    def test_select_race_medium(self, _):
+        expected = "half-elf"
+        actual = dnd.select_race()
+        self.assertEqual(expected, actual)
