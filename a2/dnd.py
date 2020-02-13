@@ -91,10 +91,10 @@ def create_character(syllables):
                      "Wisdom": roll_die(3, 6),
                      "Constitution": roll_die(3, 6),
                      "Inventory": [],
-                     "XP": 0,
-                     "Class": select_class(),
-                     "Race": select_race()}
-
+                     "XP": 0}
+        print(character)
+        character["Class"] = select_class()
+        character["Race"] = select_race()
         max_health = roll_hitpoints(character)
         current_health = max_health
         character["HP"] = [max_health, current_health]
@@ -121,12 +121,14 @@ def select_class():
                10: "sorcerer",
                11: "warlock",
                12: "wizard"}
-
-    for key, value in classes.items():
-        print(key, value)
-
-    user_input = int(input("Please input the number of the class you wish to play!"))
-    return classes[user_input]
+    while True:
+        for key, value in classes.items():
+            print(key, value)
+        user_input = int(input("Please input the number of the class you wish to play!"))
+        if 1 <= user_input <= 12:
+            return classes[user_input]
+        else:
+            print("Please input a number between 1-12 inclusive")
 
 
 def select_race():
@@ -148,11 +150,15 @@ def select_race():
              8: "human",
              9: "tiefling"}
 
-    for key, value in races.items():
-        print(key, value)
+    while True:
+        for key, value in races.items():
+            print(key, value)
 
-    user_input = int(input("Please input the number of the race you wish to play!"))
-    return races[user_input]
+        user_input = int(input("Please input the number of the race you wish to play!"))
+        if 1 <= user_input <= 9:
+            return races[user_input]
+        else:
+            print("Please input a number between 1 and 9 inclusive.")
 
 
 def roll_hitpoints(character):
