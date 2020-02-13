@@ -15,7 +15,7 @@ def roll_die(number_of_rolls, number_of_sides):
     """
     total_roll = 0
     for i in range(0, number_of_rolls):
-        total_roll += random.randint(1, number_of_sides + 1)
+        total_roll += random.randint(1, number_of_sides)
     return total_roll
 
 
