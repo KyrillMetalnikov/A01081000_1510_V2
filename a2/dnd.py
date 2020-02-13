@@ -92,7 +92,7 @@ def create_character(syllables):
                      "Constitution": roll_die(3, 6),
                      "Inventory": [],
                      "XP": 0}
-        print(character)
+        print_character(character)
         character["Class"] = select_class()
         character["Race"] = select_race()
         max_health = roll_hitpoints(character)
@@ -188,7 +188,9 @@ def print_character(character):
     :postcondition: The characters details will be displayed
 
     """
-    print(character)
+    for key, value in character.items():
+        print(key, value)
+    print()
 
 
 def choose_inventory(character):
