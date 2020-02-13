@@ -45,3 +45,9 @@ class Test(TestCase):
         expected = "paladin"
         actual = dnd.select_class()
         self.assertEqual(expected, actual)
+
+    @patch("builtins.input", side_effect="8")
+    def test_select_class_ranger(self, _):
+        expected = "ranger"
+        actual = dnd.select_class()
+        self.assertEqual(expected, actual)
