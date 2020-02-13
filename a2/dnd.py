@@ -268,10 +268,9 @@ def single_attack(attacker, defender):
         damage = roll_die(1, roll_hitpoints(attacker))
         defender["HP"[1]] -= damage
         if is_alive(defender):
-            print(defender["Name"] + " took the hit like a real champ. " +
-                  defender["Name"] + " is hurt but still lives!")
+            print(defender["Name"] + " took the hit like a real champ but still took " + str(damage) + " damage")
         else:
-            print(attacker["Name"] + " lands an amazing hit! " + defender["Name"]
+            print(attacker["Name"] + " hits" + defender["Name"] + " for" + str(damage) + " damage. " + defender["Name"]
                   + " never stood a chance and now lies dead.")
     else:
         print(attacker["Name"] + " misses entirely! " + defender["Name"] + " says: Dude are you even trying?")
