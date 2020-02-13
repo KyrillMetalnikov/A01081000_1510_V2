@@ -7,6 +7,7 @@ def roll_die(number_of_rolls, number_of_sides):
     """
     Simulate a dice roll.
 
+    Simulate a random dice roll by rolling a certain
     :param number_of_sides: A positive non-zero integer representing the number of sides on the dice.
     :param number_of_rolls: A positive non-zero integer representing the number of rolls.
     :precondition: Both parameters are non-zero positive integers.
@@ -186,7 +187,6 @@ def print_character(character):
     :param character: A dictionary with character details.
     :precondition: The parameter character is a properly formatted dictionary
     :postcondition: The characters details will be displayed
-
     """
     for key, value in character.items():
         print(key, value)
