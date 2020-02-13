@@ -15,3 +15,9 @@ class Test(TestCase):
         expected = "half-elf"
         actual = dnd.select_race()
         self.assertEqual(expected, actual)
+
+    @patch("builtins.input", side_effect="9")
+    def test_select_race_max(self, _):
+        expected = "tiefling"
+        actual = dnd.select_race()
+        self.assertEqual(expected, actual)
