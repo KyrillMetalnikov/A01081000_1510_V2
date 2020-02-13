@@ -244,9 +244,14 @@ def choose_inventory(character):
 
 def combat_round(opponent_one, opponent_two):
     first_turn = roll_for_initiative()
-    if first_turn == True:
-        combat_round
-
+    if first_turn:  # if roll_for_initiative returns true: opponent 1 attacks first
+        single_attack(opponent_one, opponent_two)  # opponent 1 attacks opponent 2
+        if is_alive(opponent_two):  # if opponent 2 survived, opponent 2 retaliates
+            single_attack(opponent_two, opponent_one)
+    else:
+        single_attack(opponent_two, opponent_one)  # if roll_for_initiative returns false: opponent 2 attacks first
+        if is_alive(opponent_one):
+            single_attack(opponent_one, opponent_two)
 
 
 def single_attack(attacker, defender):
@@ -262,6 +267,26 @@ def single_attack(attacker, defender):
     if attack_attempt > defender["Dexterity"]:
         damage = roll_die(1, roll_hitpoints(attacker))
         defender["HP"[1]] -= damage
+        if is_alive(defender):
+            print(defender["Name"] + " took the hit like a real champ. " +
+                  defender["Name"] + " is hurt but still lives!")
+        else:
+            print(attacker["Name"] + " lands an amazing hit! " + defender["Name"]
+                  + " never stood a chance and now lies dead.")
+    else:
+        print(attacker["Name"] + " misses entirely! " + defender["Name"] + " says: Dude are you even trying?")
+
+
+def is_alive(character):
+    """
+    Check if a character died.
+
+    :param character: A properly formatted character dictionary.
+    :precondition: The character param's rules are followed.
+    :postcondition: Function will say if the character is alive or not
+    :return: A boolean value representing if the character is alive.
+    """
+    return character["HP"[1]] > 1
 
 
 def roll_for_initiative():
@@ -282,10 +307,10 @@ def roll_for_initiative():
 
 
 def main():
-    # print_character(create_character(input("How many syllables do you want in your name?")))
-    # doctest.testmod()
-    # print(roll_for_initiative())
-    # choose_inventory(create_character(input("How many syllables do you want in your name?")))
+    print_character(create_character(input("How many syllables do you want in your name?")))
+    doctest.testmod()
+    print(roll_for_initiative())
+    choose_inventory(create_character(input("How many syllables do you want in your name?")))
 
 
 if __name__ == "__main__":
