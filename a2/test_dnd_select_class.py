@@ -34,3 +34,8 @@ class Test(TestCase):
         actual = dnd.select_class()
         self.assertEqual(expected, actual)
 
+    @patch("builtins.input", side_effect="6")
+    def test_select_class_monk(self, _):
+        expected = "monk"
+        actual = dnd.select_class()
+        self.assertEqual(expected, actual)
