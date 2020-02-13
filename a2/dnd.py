@@ -157,15 +157,17 @@ def select_race():
 
 def roll_hitpoints(character):
     """
-    Set the hitpoints of a character.
+    Roll the hitpoints value of a character.
 
-    Sets the hitpoints of a character based on the value of hit
+    Rolls the hitpoints value of a character based on the value of the hit dice for their class.
+    :param character: A properly formatted character dictionary.
+    :return: An integer representing the value of their hit die.
     """
-    if character["Race"] == "barbarian":
+    if character["Class"] == "barbarian":
         return roll_die(1, 12)  # Roll a 12 sided die to set hitpoints.
-    elif character["Race"] == "fighter" or character["Race"] == "paladin" or character["Race"] == "ranger":
+    elif character["Class"] == "fighter" or character["Class"] == "paladin" or character["Class"] == "ranger":
         return roll_die(1, 10)  # roll a 10 sided die to set hitpoints.
-    elif character["Race"] == "sorcerer" or character["Race"] == "wizard":
+    elif character["Class"] == "sorcerer" or character["Class"] == "wizard":
         return roll_die(1, 6)  # roll a 6 sided die to set hitpoints.
     else:
         return roll_die(1, 8)  # Only other value left to set hitpoints with.
@@ -239,10 +241,16 @@ def choose_inventory(character):
         else:
             print("Please type either the name of the item, the number of the item, or -1 to leave the shop.")
     character["Inventory"] = new_inventory
-    print(character)
 
 
 def combat_round(opponent_one, opponent_two):
+    """
+    Do a round of combat between two fighters.
+
+    :param opponent_one: A properly formatted character dictionary.
+    :param opponent_two: A different properly formatted character dictionary.
+    :precondition: The two parameters must be two different properly formatted characters.
+    """
     first_turn = roll_for_initiative()
     if first_turn:  # if roll_for_initiative returns true: opponent 1 attacks first
         single_attack(opponent_one, opponent_two)  # opponent 1 attacks opponent 2
@@ -266,14 +274,15 @@ def single_attack(attacker, defender):
     attack_attempt = roll_die(1, 20)
     if attack_attempt > defender["Dexterity"]:
         damage = roll_die(1, roll_hitpoints(attacker))
-        defender["HP"[1]] -= damage
+        defender["HP"][1] -= damage
         if is_alive(defender):
-            print(defender["Name"] + " took the hit like a real champ but still took " + str(damage) + " damage")
+            print(defender["Name"] + " took the hit like a real champ but still took " + str(damage) + " damage!\n")
         else:
-            print(attacker["Name"] + " hits" + defender["Name"] + " for" + str(damage) + " damage. " + defender["Name"]
-                  + " never stood a chance and now lies dead.")
+            print(attacker["Name"] + " hits " + defender["Name"]
+                  + " for " + str(damage) + " damage. " + defender["Name"]
+                  + " never stood a chance and now lies dead.\n")
     else:
-        print(attacker["Name"] + " misses entirely! " + defender["Name"] + " says: Dude are you even trying?")
+        print(attacker["Name"] + " misses entirely! " + defender["Name"] + " says: Dude are you even trying?\n")
 
 
 def is_alive(character):
@@ -284,8 +293,20 @@ def is_alive(character):
     :precondition: The character param's rules are followed.
     :postcondition: Function will say if the character is alive or not
     :return: A boolean value representing if the character is alive.
+    >>> character = {"HP": [3, -1]}
+    >>> is_alive(character)
+    False
+    >>> character = {"HP": [3, 1]}
+    >>> is_alive(character)
+    True
+    >>> character = {"HP": [3, 10]}
+    >>> is_alive(character)
+    True
+    >>> character = {"HP": [3, 0]}
+    >>> is_alive(character)
+    False
     """
-    return character["HP"[1]] > 1
+    return character["HP"][1] > 0
 
 
 def roll_for_initiative():
@@ -306,10 +327,26 @@ def roll_for_initiative():
 
 
 def main():
-    print_character(create_character(input("How many syllables do you want in your name?")))
+    character = create_character(input("How many syllables do you want in your name?"))
+    print_character(character)
+    choose_inventory(character)
+    print_character(character)
+    sad_jim = {
+        "Name": "Sad Jim",
+        "Strength": 7,
+        "Dexterity": 8,
+        "Intelligence": 5,
+        "Charisma": 0,  # I'm aware this is impossible by normal means, but sad jim is just awful.
+        "Wisdom": 11,
+        "Constitution": 3,
+        "Inventory": [],
+        "XP": 0,
+        "Class": "loser",
+        "Race": "human",
+        "HP": [3, 3]
+    }
+    combat_round(character, sad_jim)
     doctest.testmod()
-    print(roll_for_initiative())
-    choose_inventory(create_character(input("How many syllables do you want in your name?")))
 
 
 if __name__ == "__main__":
