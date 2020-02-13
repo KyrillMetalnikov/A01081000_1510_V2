@@ -5,13 +5,13 @@ import dnd
 
 class Test(TestCase):
     @patch("random.choice", side_effect =["b", "o"])
-    def test_generate_name_one_syllable(self, mock_rand_choice):
+    def test_generate_name_one_syllable(self, _):
         expected = "bo"
         actual = dnd.generate_name(1)
         self.assertEqual(expected, actual)
 
     @patch("random.choice", side_effect=["b", "o", "j", "y"])
-    def test_generate_name_two_syllables(self, mock_rand_choice):
+    def test_generate_name_two_syllables(self, _):
         expected = "bojy"
         actual = dnd.generate_name(2)
         self.assertEqual(expected, actual)

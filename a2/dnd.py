@@ -186,17 +186,7 @@ def print_character(character):
     :param character: A dictionary with character details.
     :precondition: The parameter character is a properly formatted dictionary
     :postcondition: The characters details will be displayed
-    >>> character = {}
-    >>> character["Name"] = "ji"
-    >>> character["Strength"] = 5
-    >>> character["Dexterity"] = 3
-    >>> character["Intelligence"] = 3
-    >>> character["Inventory"] = []
-    >>> character["XP"] = 0
-    >>> character["Class"] = "monk"
-    >>> character["Race"] = "elf"
-    >>> print_character(character)
-    {'Name': 'ji', 'Strength': 5, 'Dexterity': 3, 'Intelligence': 3, 'Inventory': [], 'XP': 0, 'Class': 'monk', 'Race': 'elf'}
+
     """
     print(character)
 
@@ -210,7 +200,9 @@ def choose_inventory(character):
     :postcondition: The store will be fully operation
     """
     store_inventory = {1: "Thumbtacks of blindness", 2: "Double edged dagger", 3: "Double handled dagger",
-                       4: "Longsword of bluntness", 5: "Railroads for Dummies", 6: "Ring of Detect Rings"}
+                       4: "Longsword of bluntness", 5: "Railroads for Dummies", 6: "Ring of detect rings",
+                       7: "Boots of lightness", 8: "Flashlight of detect dark", 9: "Intellectual property",
+                       10: "Patch of nicotine"}
 
     user_input = ""
     new_inventory = []
@@ -224,28 +216,19 @@ def choose_inventory(character):
             3: Double handled dagger
             4: Longsword of bluntness
             5: Railroads for Dummies
-            6: Ring of Detect Rings
+            6: Ring of detect rings
+            7: Boots of lightness
+            8:
             
             What would you like to buy? (-1 to finish)
             """)
 
         user_input = input()
-        if int(user_input) == int(1) or user_input.strip().lower() == "thumbtacks of blindness":
-            new_inventory.append(store_inventory[1])
-        elif int(user_input) == int(2) or user_input.strip().lower() == "double edged dagger":
-            new_inventory.append(store_inventory[2])
-        elif int(user_input) == int(3) or user_input.strip().lower() == "double handled dagger":
-            new_inventory.append(store_inventory[3])
-        elif int(user_input) == int(4) or user_input.strip().lower() == "longsword of bluntness":
-            new_inventory.append(store_inventory[4])
-        elif int(user_input) == int(5) or user_input.strip().lower() == "railroads for Dummies":
-            new_inventory.append(store_inventory[5])
-        elif int(user_input) == int(6) or user_input.strip().lower() == "ring of Detect Rings":
-            new_inventory.append(store_inventory[6])
-        elif int(user_input) == int(-1):
-            continue
-        else:
-            print("Please type either the name of the item, the number of the item, or -1 to leave the shop.")
+        if user_input.isdigit():
+            if int(user_input) in store_inventory:
+                new_inventory.append(store_inventory[int(user_input)])
+            else:
+                print("Please type either the name of the item, the number of the item, or -1 to leave the shop.")
     character["Inventory"] = new_inventory
 
 

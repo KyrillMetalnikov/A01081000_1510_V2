@@ -4,8 +4,9 @@ import dnd
 
 
 class Test(TestCase):
-    @patch("random.choice", side_effect=["c", "a"])
-    def test_generate_syllable_once(self, mock_rand_choice):
+    @patch("dnd.generate_consonant", side_effect=["c"])
+    @patch("dnd.generate_vowel", side_effect=["a"])
+    def test_generate_syllable_once(self, _, __):
         expected = "ca"
         actual = dnd.generate_syllable()
         self.assertEqual(expected, actual)
