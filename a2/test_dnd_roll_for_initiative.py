@@ -9,3 +9,9 @@ class Test(TestCase):
         expected = True
         actual = dnd.roll_for_initiative()
         self.assertEqual(expected, actual)
+
+    @patch("dnd.roll_die", side_effect=[8, 12])
+    def test_roll_for_initiative_char_two_wins(self, _):
+        expected = False
+        actual = dnd.roll_for_initiative()
+        self.assertEqual(expected, actual)
