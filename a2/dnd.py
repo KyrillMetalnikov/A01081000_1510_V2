@@ -220,7 +220,9 @@ def choose_inventory(character):
             5: Railroads for Dummies
             6: Ring of detect rings
             7: Boots of lightness
-            8:
+            8: Flashlight of detect dark
+            9: Intellectual property
+            10: Patch of nicotine
             
             What would you like to buy? (-1 to finish)
             """)
