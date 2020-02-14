@@ -15,3 +15,9 @@ class Test(TestCase):
         expected = False
         actual = dnd.roll_for_initiative()
         self.assertEqual(expected, actual)
+
+    @patch("dnd.roll_die", side_effect=[8, 8, 10, 7])
+    def test_roll_for_initiative_loop_then_char_one_true(self, _):
+        expected = True
+        actual = dnd.roll_for_initiative()
+        self.assertEqual(expected, actual)
