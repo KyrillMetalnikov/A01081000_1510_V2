@@ -77,3 +77,39 @@ class Test(TestCase):
 
 """
         self.assertEqual(expected, mock_stdout.getvalue())
+
+    @patch('dnd.roll_die', side_effect=[5])
+    @patch('dnd.roll_hitpoints', side_effect=[6])
+    @patch('sys.stdout', new_callable=io.StringIO)
+    def test_single_attack_miss(self, _, __, mock_stdout):
+        character = {"Name": "Xyxy",
+                     "Strength": 10,
+                     "Dexterity": 8,
+                     "Intelligence": 5,
+                     "Charisma": 9,
+                     "Wisdom": 7,
+                     "Constitution": 3,
+                     "Inventory": [],
+                     "XP": 0,
+                     "Class": "monk",
+                     "Race": "elf",
+                     "HP": [7, 7]}
+        sad_jim = {
+            "Name": "Sad Jim",
+            "Strength": 7,
+            "Dexterity": 8,
+            "Intelligence": 5,
+            "Charisma": 0,  # I'm aware this is impossible by normal means, but sad jim is just awful.
+            "Wisdom": 11,
+            "Constitution": 3,
+            "Inventory": [],
+            "XP": 0,
+            "Class": "loser",
+            "Race": "human",
+            "HP": [3, 3]
+        }
+        dnd.single_attack(character, sad_jim)
+        expected = """Xyxy misses entirely! Sad Jim says: Dude are you even trying?
+
+"""
+        self.assertEqual(expected, mock_stdout.getvalue())

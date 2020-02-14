@@ -20,6 +20,6 @@ class Test(TestCase):
         self.assertEqual(actual, 8)
 
     @patch("random.randint", side_effect=[3, 8, 15, 12, 9, 1, 10, 8, 7, 4])
-    def test_roll_die_fifteen_sides_ten_times(self, _):
+    def test_roll_die_many_times(self, _):
         actual = dnd.roll_die(10, 15)
         self.assertEqual(actual, 77)
