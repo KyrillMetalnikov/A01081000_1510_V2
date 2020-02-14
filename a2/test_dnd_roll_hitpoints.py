@@ -24,3 +24,10 @@ class Test(TestCase):
         expected = 6
         actual = dnd.roll_hitpoints(character)
         self.assertEqual(expected, actual)
+
+    @patch("dnd.roll_die", side_effect=[3])
+    def test_roll_hitpoints_max_6(self, _):
+        character = {"Class": "wizard"}
+        expected = 3
+        actual = dnd.roll_hitpoints(character)
+        self.assertEqual(expected, actual)
