@@ -4,7 +4,7 @@ import dnd
 
 
 class Test(TestCase):
-    @patch("builtins.input", side_effect=['1', '2,', '2', '-1'])
+    @patch("builtins.input", side_effect=['1', '2', '2', '-1'])
     def test_choose_inventory(self, _):
         character = {"Name": "Xyxy",
                      "Strength": 10,
@@ -19,4 +19,5 @@ class Test(TestCase):
                      "Race": "elf",
                      "HP": [7, 7]}
         dnd.choose_inventory(character)
-        self.assertEqual(['Thumbtacks of blindness', 'Double edged dagger', 'Double edged dagger'], character["Inventory"])
+        self.assertEqual(['Thumbtacks of blindness', 'Double edged dagger', 'Double edged dagger'],
+                         character["Inventory"])
