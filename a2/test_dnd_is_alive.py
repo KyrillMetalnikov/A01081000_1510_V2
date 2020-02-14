@@ -21,3 +21,5 @@ class Test(TestCase):
         expected = False
         actual = dnd.is_alive(character)
         self.assertEqual(expected, actual)
+
+    def test

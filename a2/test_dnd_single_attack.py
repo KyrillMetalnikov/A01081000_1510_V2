@@ -81,7 +81,7 @@ class Test(TestCase):
     @patch('dnd.roll_die', side_effect=[5])
     @patch('dnd.roll_hitpoints', side_effect=[6])
     @patch('sys.stdout', new_callable=io.StringIO)
-    def test_single_attack_miss(self, _, __, mock_stdout):
+    def test_single_attack_miss(self, mock_stdout, _, __):
         character = {"Name": "Xyxy",
                      "Strength": 10,
                      "Dexterity": 8,
