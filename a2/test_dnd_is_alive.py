@@ -22,4 +22,8 @@ class Test(TestCase):
         actual = dnd.is_alive(character)
         self.assertEqual(expected, actual)
 
-    def test
+    def test_is_alive_negative_hp(self):
+        character = {"HP": [5, -1]}
+        expected = False
+        actual = dnd.is_alive(character)
+        self.assertEqual(expected, actual)
