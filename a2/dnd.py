@@ -7,7 +7,9 @@ def roll_die(number_of_rolls, number_of_sides):
     """
     Simulate a dice roll.
 
-    Simulate a random dice roll by rolling a certain
+    Simulate a random dice roll by rolling a certain sided dice repeatedly.
+    The computational thinking i used in this function is an algorithm that more accurately represents the values found
+    in a dice roll when rolling more than one die.
     :param number_of_sides: A positive non-zero integer representing the number of sides on the dice.
     :param number_of_rolls: A positive non-zero integer representing the number of rolls.
     :precondition: Both parameters are non-zero positive integers.
@@ -24,6 +26,7 @@ def generate_name(syllables):
     """
     Create a random name.
 
+    I used decomposition for this function by splitting it into helper functions.
     :param syllables: A positive non-zero integer representing the number of syllables in the random name.
     :precondition: The rules of the parameter are followed.
     :postcondition: A random name of specified syllables will be created.
@@ -39,6 +42,8 @@ def generate_vowel():
     """
     Generate a random vowel.
 
+    This is part of the decomposition process used in generate name.  This is also used in abstraction as this can be
+    used in any situation that requires a random vowel.
     :precondition: Provide the function with no inputs.
     :postcondition: Function will create a single random vowel.
     :return: A vowel in string format.
@@ -50,6 +55,8 @@ def generate_consonant():
     """
     Generate a random consonant.
 
+    This is part of the decomposition process used in generate name.  This is also used in abstraction as this can be
+    used in any situation that requires a random consonant.
     :precondition: Provide the function with no inputs.
     :postcondition: Function will create a single random consonant.
     :return: A consonant in in string format.
@@ -61,6 +68,7 @@ def generate_syllable():
     """
     Generate a random syllable of one consonant and one vowel.
 
+    This is part of the decomposition process used in generate name.
     :precondition: Provide no inputs into the function.
     :postcondition: Function will create a single random syllable.
     :return: A two character syllable in string format.
@@ -73,6 +81,7 @@ def create_character(syllables):
     """
     Create a Dungeons and Dragons Character.
 
+    This function uses decomposition by using a wide variety of helper functions to accomplish the task.
     Creates a character by randomly generating a name, randomly generating the 6 core stats, adding an empty inventory,
     setting the race, setting the class, adding an xp counter that starts at 0, and setting the max hp.
     :param syllables: A positive integer representing the number of syllables in the name.
@@ -106,6 +115,8 @@ def select_class():
     """
     Display all dnd classes, then let user pick a class.
 
+    This function uses pattern matching by matching the dictionary key to the number printed in order to make it
+    simpler for the user to select a class.
     :precondition: User will only input integers between 1-12 inclusive
     :postcondition: The function will return the name of the corresponding class.
     :return: Name of the class in string format.
@@ -136,6 +147,8 @@ def select_race():
     """
     Display all dnd races, then let user pick a race.
 
+    This function uses pattern matching to match the key in the dictionary to the value printed on screen in order
+    to make it easier for the user to select a race.
     :precondition: User will only input integers between 1-9 inclusive.
     :postcondition: The function will return the name of the corresponding race
     :return: Name of the race in string format.
@@ -166,6 +179,9 @@ def roll_hitpoints(character):
     """
     Roll the hitpoints value of a character.
 
+    This function uses decomposition as it uses a helper function to gain the random number.  This function also uses
+    pattern matching by having more than one entity in every if statement(other than the barbarian) in order to shorten
+    the code.
     Rolls the hitpoints value of a character based on the value of the hit dice for their class.
     :param character: A properly formatted character dictionary.
     :return: An integer representing the value of their hit die.
@@ -184,6 +200,7 @@ def print_character(character):
     """
     Display the details of a character.
 
+    This function uses abstraction as it can be used to print any dictionary in a formatted way.
     :param character: A dictionary with character details.
     :precondition: The parameter character is a properly formatted dictionary
     :postcondition: The characters details will be displayed
@@ -197,6 +214,9 @@ def choose_inventory(character):
     """
     Display items in a store, then let the customer buy them.
 
+    This function uses algorithms in order to repeatedly display the store and take input until the user no longer
+    wishes to.  It also uses pattern matching by matching the pattern of the dictionary to the display on screen to
+    make it easier for the user to choose the right item.
     :param character: A properly formatted character dictionary
     :precondition: Follow the rules of the param
     :postcondition: The store will be fully operation
@@ -240,6 +260,10 @@ def combat_round(opponent_one, opponent_two):
     """
     Do a round of combat between two fighters.
 
+    This function uses decomposition by using a wide variety of helper functions.  It also uses pattern matching by
+    demonstrating that multiple attacks are all processed in the exact same way, and so shortens the function. It also
+    uses an algorithm to determine if a character is still alive (also using a helper function) in order to continue the
+    function if necessary.
     :param opponent_one: A properly formatted character dictionary.
     :param opponent_two: A different properly formatted character dictionary.
     :precondition: The two parameters must be two different properly formatted characters.
@@ -259,6 +283,9 @@ def single_attack(attacker, defender):
     """
     Complete a single attack attempt.
 
+    This function uses an algorithm to determine what message to display on screen (whether the attack hit, missed or
+    killed).  It also uses decomposition by using various helper functions.  It also demonstrates abstraction as it can
+    be used with any two character objects.
     :param attacker: A properly formatted character dictionary.
     :param defender: A properly formatted character dictionary.
     :precondition: Both params must be different characters that are properly formatted.
@@ -282,6 +309,7 @@ def is_alive(character):
     """
     Check if a character died.
 
+    This function is part of the decomposition process of combat_round and single_attack.
     :param character: A properly formatted character dictionary.
     :precondition: The character param's rules are followed.
     :postcondition: Function will say if the character is alive or not
@@ -306,6 +334,8 @@ def roll_for_initiative():
     """
     Roll an initiative.
 
+    This function uses decomposition as it uses a helper function.  It is also part of the decomposition process of a
+    combat round.
     :precondition: No parameters are inputted into the function.
     :postcondition: Will decide who goes first.
     :return: A boolean value if someone goes first or not.
