@@ -6,9 +6,11 @@ import io
 
 
 class Test(TestCase):
-    @patch("roll_for_initiative", side_effect=[True])
-    @patch()
-    def test_combat_round(self, _):
+    @patch("dnd.roll_for_initiative", side_effect=[True])
+    @patch('dnd.roll_die', side_effect=[20, 6])
+    @patch('dnd.roll_hitpoints', side_effect=[6])
+    @patch('sys.stdout', new_callable=io.StringIO)
+    def test_combat_round(self, mock_sysout, _, __, ___):
         character = {"Name": "Xyxy",
                      "Strength": 10,
                      "Dexterity": 8,
@@ -35,3 +37,8 @@ class Test(TestCase):
             "Race": "human",
             "HP": [3, 3]
         }
+        expected = """Xyxy hits Sad Jim for 6 damage. Sad Jim never stood a chance and now lies dead.
+
+"""
+        dnd.combat_round(character, sad_jim)
+        self.assertEqual(expected, mock_sysout.getvalue())
