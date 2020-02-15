@@ -113,3 +113,5 @@ class Test(TestCase):
 
 """
         self.assertEqual(expected, mock_stdout.getvalue())
+
+
