@@ -1,3 +1,4 @@
+import doctest
 """Add and do dot-product on sparse vectors"""
 
 
@@ -12,7 +13,7 @@ def sparse_add(sparse_one: dict, sparse_two: dict):
     :return: A dictionary of the sum of the two vectors, or None if the sum is not possible.
 
     >>> sparse_add({0: 1, 5: 2, 6: 1, 'length': 7}, {1: 2, 3: 2, 6: 2, 'length': 8})
-    None
+
     >>> sparse_add({0: 1, 5: 2, 6: 1, 'length': 8}, {1: 2, 3: 2, 6: 2, 'length': 8})
     {'length': 4, 0: 1, 1: 2, 3: 2, 5: 2, 6: 3}
     """
@@ -21,7 +22,7 @@ def sparse_add(sparse_one: dict, sparse_two: dict):
         counter = 0
 
         # adding 0's to fill the dictionaries before adding them together
-        while counter < len(sparse_one) - 1:  # sparse_one is used arbitrarily as both have the same value
+        while counter < sparse_one['length']:  # sparse_one is used arbitrarily as both have the same value
             if counter not in sparse_one:
                 sparse_one[counter] = 0
             if counter not in sparse_two:
@@ -38,8 +39,34 @@ def sparse_add(sparse_one: dict, sparse_two: dict):
         return None
 
 
+def sparse_dot_product(sparse_one: dict, sparse_two: dict):
+    """
+    Find the dot product of two sparse dictionaries.
+
+    :param sparse_one: A sparse vector in dictionary format with a 'length' key that has the true length of the dict.
+    :param sparse_two: A sparse vector in dictionary format with a 'length' key that has the true length of the dict.
+    :precondition: Two sparse dictionaries must be inputted as parameters and follow the rules of the params.
+    :postcondition: The function will find the dot product when possible.
+    :return: Value of the dot product or None if the dictionaries are of different length.
+
+    >>> sparse_dot_product({0: 1, 5: 2, 6: 1, 'length': 7}, {1: 2, 3: 2, 6: 2, 'length': 8})
+
+    >>> sparse_dot_product({1: -2, 5: 2, 6: 5, 'length': 8}, {1: 2, 3: 2, 6: 2, 'length': 8})
+    6
+    """
+    if sparse_one['length'] == sparse_two['length']:
+        total = 0
+        for i in range(0, sparse_one['length'] - 1):
+            if (i in sparse_one) and (i in sparse_two):
+                total += (sparse_one[i] * sparse_two[i])
+        return total
+
+    else:
+        return None
+
+
 def main():
-    print(sparse_add({0: 1, 5: 2, 6: 1, 'length': 8}, {1: 2, 3: 2, 6: 2, 'length': 8}))
+    doctest.testmod()
 
 
 if __name__ == "__main__":
