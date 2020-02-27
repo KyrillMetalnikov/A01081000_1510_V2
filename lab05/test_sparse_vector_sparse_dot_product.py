@@ -27,3 +27,8 @@ class Test(TestCase):
         actual = sparse_vector.sparse_dot_product({'length': 5, 0: 0, 1: 0, 2: 0}, {'length': 5, 0: 0, 1: 0, 2: 0})
         expected = 0
         self.assertEqual(actual, expected)
+
+    def test_sparse_dot_product_same_length_one_all_zeroes(self):
+        actual = sparse_vector.sparse_dot_product({'length': 5, 0: 0, 1: 0, 2: 0}, {'length': 5, 0: 1, 1: 2, 2: 3})
+        expected = 0
+        self.assertEqual(actual, expected)
