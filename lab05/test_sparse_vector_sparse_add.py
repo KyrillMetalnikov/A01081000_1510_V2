@@ -22,3 +22,8 @@ class Test(TestCase):
         actual = sparse_vector.sparse_add({4: -5, 'length': 5, 0: 4.3}, {'length': 5, 2: 7.5, 4: -6})
         expected = {'length': 5, 0: 4.3, 2: 7.5, 4: -11}
         self.assertEqual(actual, expected)
+
+    def test_sparse_add_complementary_values(self):
+        actual = sparse_vector.sparse_add({0: 1, 1: 2, 2: 3, 'length': 8}, {0: -1, 1: -2, 2: -3, 'length': 8})
+        expected = {'length': 8}
+        self.assertEqual(expected, actual)
