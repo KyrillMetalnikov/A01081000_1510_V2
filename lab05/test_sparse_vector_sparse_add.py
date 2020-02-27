@@ -27,3 +27,8 @@ class Test(TestCase):
         actual = sparse_vector.sparse_add({0: 1, 1: 2, 2: 3, 'length': 8}, {0: -1, 1: -2, 2: -3, 'length': 8})
         expected = {'length': 8}
         self.assertEqual(expected, actual)
+
+    def test_sparse_add_all_zeroes(self):
+        actual = sparse_vector.sparse_add({'length': 5, 0: 0, 1: 0, 2: 0, 3: 0}, {'length': 5, 0: 0, 1: 0, 2: 0, 3: 0})
+        expected = {'length': 5}
+        self.assertEqual(expected, actual)
