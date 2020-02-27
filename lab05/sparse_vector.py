@@ -1,5 +1,5 @@
 import doctest
-"""Add and do dot-product on sparse vectors"""
+"""Add and do dot-product on sparse vectors."""
 
 
 def sparse_add(sparse_one: dict, sparse_two: dict):
