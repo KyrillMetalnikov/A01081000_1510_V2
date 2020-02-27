@@ -15,10 +15,12 @@ def sparse_add(sparse_one: dict, sparse_two: dict):
     >>> sparse_add({0: 1, 5: 2, 6: 1, 'length': 7}, {1: 2, 3: 2, 6: 2, 'length': 8})
 
     >>> sparse_add({0: 1, 5: 2, 6: 1, 'length': 8}, {1: 2, 3: 2, 6: 2, 'length': 8})
-    {'length': 4, 0: 1, 1: 2, 3: 2, 5: 2, 6: 3}
+    {'length': 8, 0: 1, 1: 2, 3: 2, 5: 2, 6: 3}
+    >>> sparse_add({4: -5, 'length': 5, 0: 4.3}, {'length': 5, 2: 7.5, 4: -6})
+    {'length': 5, 0: 4.3, 2: 7.5, 4: -11}
     """
     if sparse_one['length'] == sparse_two['length']:
-        new_dict = {'length': len(sparse_one)}
+        new_dict = {'length': sparse_two['length']}
         counter = 0
 
         # adding 0's to fill the dictionaries before adding them together
@@ -53,10 +55,12 @@ def sparse_dot_product(sparse_one: dict, sparse_two: dict):
 
     >>> sparse_dot_product({1: -2, 5: 2, 6: 5, 'length': 8}, {1: 2, 3: 2, 6: 2, 'length': 8})
     6
+    >>> sparse_dot_product({4: -5, 'length': 5, 0: 4.3}, {'length': 5, 2: 7.5, 4: -6})
+    30
     """
     if sparse_one['length'] == sparse_two['length']:
         total = 0
-        for i in range(0, sparse_one['length'] - 1):
+        for i in range(0, sparse_one['length']):
             if (i in sparse_one) and (i in sparse_two):
                 total += (sparse_one[i] * sparse_two[i])
         return total
