@@ -14,6 +14,13 @@ def game():
         print("You cannot go there!  Choose a different direction!")
 
 
+def make_board():
+    x_axis = range(0, 5)
+    y_axis = range(0, 5)
+    board = (x_axis, y_axis)
+    return board
+
+
 def main():
     game()
 
