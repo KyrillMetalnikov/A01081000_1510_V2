@@ -28,6 +28,10 @@ def make_character(current_board):
     return position
 
 
+def get_user_choice():
+    return input("Which direction do you want to go in (N, E, S, W")
+
+
 def main():
     game()
 
