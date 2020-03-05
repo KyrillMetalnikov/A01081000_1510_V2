@@ -29,7 +29,28 @@ def make_character(current_board):
 
 
 def get_user_choice():
-    return input("Which direction do you want to go in (N, E, S, W")
+    return input("Which direction do you want to go in (N, E, S, W").upper()
+
+
+def validate_move(board, character, direction):
+    if direction == "N":
+        if character[1] < 4:
+            return True
+    if direction == "S":
+        if character[1] > 0:
+            return True
+    if direction == "E":
+        if character[0] < 4:
+            return True
+    if direction == "W":
+        if character[0] > 0:
+            return True
+    else:
+        return False
+
+
+def move_character():
+
 
 
 def main():
