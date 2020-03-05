@@ -3,9 +3,9 @@ import time
 
 
 def timer(func):
-    def wrapper_timer(*args, **kwargs):
+    def wrapper_timer(*args):
         start_time = time.perf_counter()
-        func(*args, **kwargs)
+        func(*args)
         end_time = time.perf_counter()
         run_time = end_time - start_time
         print(f"finished {func.__name__!r} in {run_time:.4f} secs")
@@ -14,7 +14,7 @@ def timer(func):
 
 
 @timer
-def eratosthenes(upperbound):
+def eratosthenes_kyrill(upperbound):
     prime_numbers = []
     for i in range(0, upperbound + 1):
         prime_numbers.append(i)
@@ -71,7 +71,7 @@ def eratosthenes_ralph(upperbound):
 
 def main():
     upperbound = 1000
-    kyrill_run_time = eratosthenes(upperbound)
+    kyrill_run_time = eratosthenes_kyrill(upperbound)
     ralph_run_time = eratosthenes_ralph(upperbound)
     ronald_run_time = eratosthenes_ronald(upperbound)
     fastest_runtime = [kyrill_run_time, ralph_run_time, ronald_run_time]
