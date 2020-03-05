@@ -60,6 +60,11 @@ def move_character(direction, character):
         character[0] -= 1
 
 
+def check_if_exit_reached(character, board):
+    if character[1] == board[1][1] and character[0] == board[0][1]:
+        return True
+    else:
+        return False
 
 
 def main():
