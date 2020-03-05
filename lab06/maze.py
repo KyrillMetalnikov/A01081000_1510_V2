@@ -16,9 +16,9 @@ def game():
     print("You've won!  Congratulations on walking a straightish line!")
 
 
-def make_board():
-    x_axis = (0, 1, 2, 3, 4)
-    y_axis = (0, 1, 2, 3, 4)
+def make_board(size):
+    x_axis = (0, size - 1)
+    y_axis = (0, size - 1)
     board = (x_axis, y_axis)
     return board
 
@@ -34,16 +34,16 @@ def get_user_choice():
 
 def validate_move(board, character, direction):
     if direction == "N":
-        if character[1] < 4:
+        if character[1] < board[1][1]:
             return True
     if direction == "S":
-        if character[1] > 0:
+        if character[1] > board[1][0]:
             return True
     if direction == "E":
-        if character[0] < 4:
+        if character[0] < board[0][1]:
             return True
     if direction == "W":
-        if character[0] > 0:
+        if character[0] > board[0][0]:
             return True
     else:
         return False
