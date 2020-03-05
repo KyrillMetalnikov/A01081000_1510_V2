@@ -9,7 +9,7 @@ def game():
         direction = get_user_choice()
         valid_move = validate_move(board, character, direction)
         if valid_move:
-            move_character()
+            move_character(direction, character)
             found_exit = check_if_exit_reached()
         else:  # Tell the user they can't go in that direction
             print("You cannot go there!  Choose a different direction!")
@@ -36,20 +36,29 @@ def validate_move(board, character, direction):
     if direction == "N":
         if character[1] < board[1][1]:
             return True
-    if direction == "S":
+    elif direction == "S":
         if character[1] > board[1][0]:
             return True
-    if direction == "E":
+    elif direction == "E":
         if character[0] < board[0][1]:
             return True
-    if direction == "W":
+    elif direction == "W":
         if character[0] > board[0][0]:
             return True
     else:
         return False
 
 
-def move_character():
+def move_character(direction, character):
+    if direction == "N":
+        character[1] += 1
+    elif direction == "S":
+        character[1] -= 1
+    elif direction == "E":
+        character[0] += 1
+    elif direction == "W":
+        character[0] -= 1
+
 
 
 
