@@ -70,18 +70,18 @@ def eratosthenes_ralph(upperbound):
 
 
 def main():
-    value = 1000
-    kyrill = eratosthenes(value)
-    ralph = eratosthenes_ralph(value)
-    ronald = eratosthenes_ronald(value)
-    fastest_runtime = [kyrill, ralph, ronald]
+    upperbound = 1000
+    kyrill_run_time = eratosthenes(upperbound)
+    ralph_run_time = eratosthenes_ralph(upperbound)
+    ronald_run_time = eratosthenes_ronald(upperbound)
+    fastest_runtime = [kyrill_run_time, ralph_run_time, ronald_run_time]
     fastest_runtime.sort()
     name = "Kyrill"
-    if fastest_runtime[0] == ronald:
+    if fastest_runtime[0] == ronald_run_time:
         name = "Ronald"
-    elif fastest_runtime[0] == ralph:
+    elif fastest_runtime[0] == ralph_run_time:
         name = "Ralph"
-    print(f"The fastest runtime was made by {name}")
+    print(f"The fastest runtime was made by {name}!")
 
 
 if __name__ == "__main__":
