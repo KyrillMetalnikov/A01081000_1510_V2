@@ -42,6 +42,17 @@ def make_board(size):
 
 
 def make_character(current_board):
+    """
+    Create a character by setting their position to the starting location.
+
+    :param current_board: A tuple of two tuples representing the board.
+    :precondition: Both tuples in current_board must have 0 as index 0 and at least 0 in index 1.
+    :postcondition: The characters position will be set to coordinates (0, 0)
+    :return: A list containing the characters current position.
+
+    >>> make_character(((0, 4), (0, 4)))
+    [0, 0]
+    """
     position = [current_board[0][0], current_board[1][0]]
     return position
 
