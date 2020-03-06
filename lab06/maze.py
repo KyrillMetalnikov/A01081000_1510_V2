@@ -108,14 +108,6 @@ def display_board(board, character):
     :param character: A list representing the players current position.
     :precondition: The rules of the parameters must be followed.
     :postcondition: The board and the character will be displayed on screen.
-
-    >>> display_board(((0, 5), (0, 5)), [0, 0])
-    O x x x x x
-    x x x x x x
-    x x x x x x
-    x x x x x x
-    x x x x x x
-    x x x x x x
     """
     coordinates = tuple(character)
     for y_coordinate in range(0, board[1][1] + 1):
