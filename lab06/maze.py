@@ -72,11 +72,18 @@ def validate_move(board, character, direction):
     Validate the character's move.
 
     :param board: A tuple representing the full board.
-    :param character: A list representing the characters current position
+    :param character: A list representing the characters current position.
     :param direction: A string representing a direction the user wishes to move towards.
     :precondition: The rules of the parameters are followed.
     :postcondition: The function will determine if the move is valid.
     :return: A boolean representing whether or not a move is valid.
+
+    >>> validate_move(((0, 5), (0, 5)), [0, 0], "N")
+    False
+    >>> validate_move(((0, 5), (0, 5)), [0, 0], "S")
+    True
+    >>> validate_move(((0, 5), (0, 5)), [0, 0], "W")
+    False
     """
     if direction == "N":
         if character[1] > board[1][0]:
@@ -90,8 +97,7 @@ def validate_move(board, character, direction):
     elif direction == "W":
         if character[0] > board[0][0]:
             return True
-    else:
-        return False
+    return False
 
 
 def display_board(board, character):
