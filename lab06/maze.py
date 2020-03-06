@@ -58,6 +58,12 @@ def make_character(current_board):
 
 
 def get_user_choice():
+    """
+    Take a user input and convert it to uppercase.
+    :precondition: The user inputs a string.
+    :postcondition: The string will be set to uppercase.
+    :return: A string in uppercase.
+    """
     return input("Which direction do you want to go in (N, E, S, W)").upper()
 
 
