@@ -128,6 +128,14 @@ def display_board(board, character):
 
 
 def move_character(direction, character):
+    """
+    Move a character one unit in a certain direction.
+
+    :param direction: A string either "N", "S", "E", "W" representing the direction the character is moving.
+    :param character: A list of two integers representing the characters current position.
+    :precondition: The rules of the parameters must be followed.
+    :postcondition: The characters position will be properly updated.
+    """
     if direction == "N":
         character[1] -= 1
     elif direction == "S":
