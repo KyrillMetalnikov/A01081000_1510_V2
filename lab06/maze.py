@@ -1,8 +1,9 @@
+import doctest
 """Make a maze and let a user walk through it."""
 
 
 def game():
-    board = make_board(5)
+    board = make_board(8)
     character = make_character(board)
     display_board(board, character)
     found_exit = False
@@ -19,6 +20,21 @@ def game():
 
 
 def make_board(size):
+    """
+    Create a square board for play.
+
+    :param size: A positive non-zero integer representing the width/height of the board.
+    :precondition: The rules of the parameters must be followed.
+    :postcondition: A square board will be created.
+    :return: A tuple representing the min/max values allowed for the x and y coordinates.
+
+    >>> make_board(1)
+    ((0, 0), (0, 0))
+    >>> make_board(5)
+    ((0, 4), (0, 4))
+    >>> make_board(100)
+    ((0, 99), (0, 99))
+    """
     x_axis = (0, size - 1)
     y_axis = (0, size - 1)
     board = (x_axis, y_axis)
@@ -66,9 +82,9 @@ def display_board(board, character):
     for y_coordinate in range(0, board[1][1] + 1):
         for x_coordinate in range(0, board[1][1] + 1):
             if (x_coordinate, y_coordinate) == coordinates:
-                print("O", end="")
+                print("O", end=" ")
             else:
-                print("x", end="")
+                print("x", end=" ")
         print("")
 
 
@@ -91,7 +107,8 @@ def check_if_exit_reached(character, board):
 
 
 def main():
-    game()
+    # game()
+    doctest.testmod()
 
 
 if __name__ == "__main__":
