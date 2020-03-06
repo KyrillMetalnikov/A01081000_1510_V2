@@ -160,8 +160,7 @@ def check_if_exit_reached(character, board):
 
 
 def main():
-    # game()
-    doctest.testmod()
+    game()
 
 
 if __name__ == "__main__":
