@@ -147,6 +147,20 @@ def move_character(direction, character):
 
 
 def check_if_exit_reached(character, board):
+    """
+    Check if the character reached the exit.
+
+    :param character: A list of two integers representing the characters current position.
+    :param board: A tuple of two tuples representing the playing area.
+    :precondition: The rules of the parameters must be followed.
+    :postcondition: The function will check if the character reached the exit.
+    :return: A boolean value representing if the character reached the exit or not.
+
+    >>> check_if_exit_reached([0, 0], ((0, 4), (0, 4)))
+    False
+    >>> check_if_exit_reached([4, 4], ((0, 4), (0, 4)))
+    True
+    """
     if character[1] == board[1][1] and character[0] == board[0][1]:
         return True
     else:
