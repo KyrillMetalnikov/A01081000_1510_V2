@@ -58,9 +58,7 @@ def findAnEven(input_list):
 
 
 def main():
-    # print(heron(5.5))
-    # print(heron(3))
-    # print(findAnEven([1, 3, 5, 7, 9]))
+    heron(-1)
     doctest.testmod()
 
 

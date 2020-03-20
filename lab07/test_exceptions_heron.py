@@ -1,6 +1,8 @@
 from unittest import TestCase
 import exceptions
 import math
+import io
+from unittest.mock import patch
 
 
 class Test(TestCase):
@@ -19,6 +21,8 @@ class Test(TestCase):
         actual = exceptions.heron(42)
         self.assertAlmostEqual(actual, expected)
 
-    def test_heron_error(self):
-        actual = exceptions.heron(-1)
-        self.assertRaises(ZeroDivisionError)
+    @patch("sys.stdout", new_callable=io.StringIO)
+    def test_heron_error_print_value(self, mock_stdout):
+        exceptions.heron(-1)
+        expected = "Error: The number provided must be positive!\n"
+        self.assertEqual(expected, mock_stdout.getvalue())
