@@ -16,3 +16,7 @@ class Test(TestCase):
         actual = exceptions.findAnEven([1, 3, 2, 6, 2])
         expected = 2
         self.assertEqual(actual, expected)
+
+    def test_find_an_even_only_odds(self):
+        with self.assertRaises(ValueError):
+            exceptions.findAnEven([1, 3, 5, 7, 9])
