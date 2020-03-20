@@ -26,3 +26,8 @@ class Test(TestCase):
         exceptions.heron(-1)
         expected = "Error: The number provided must be positive!\n"
         self.assertEqual(expected, mock_stdout.getvalue())
+
+    def test_heron_error_return_value(self):
+        actual = exceptions.heron(-1)
+        expected = -1
+        self.assertEqual(actual, expected)
