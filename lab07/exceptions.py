@@ -1,3 +1,4 @@
+import doctest
 """Demonstrate proper exception protocol."""
 
 
@@ -9,7 +10,12 @@ def heron(number) -> float:
     :param number: A positive number (float or integer)
     :precondition: number must be positive.
     :postcondition: A close estimate of the square root will be found
-    :return: A clsoe estimate of the square root as a float.
+    :return: A close estimate of the square root as a float.
+
+    >>> heron(9)
+    3.0
+    >>> heron(5.5)
+    2.345207879911715
     """
     try:
         if number < 0:
@@ -47,9 +53,10 @@ def findAnEven(input_list):
 
 
 def main():
-    # print(heron(-5))
+    # print(heron(5.5))
     # print(heron(3))
-    print(findAnEven([1, 3, 5, 7, 9]))
+    # print(findAnEven([1, 3, 5, 7, 9]))
+    doctest.testmod()
 
 
 if __name__ == "__main__":
