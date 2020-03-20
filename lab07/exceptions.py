@@ -26,6 +26,18 @@ def heron(number) -> float:
     return square_root_guess
 
 
+def findAnEven(input_list):
+    """
+    Return the first even number in input_list
+
+    :param input_list: a list of integers
+    :precondition: input_list must be a list of integers
+    :postcondition: return the first even number in input_list
+    :raise ValueError: if input_list does not contain an even number
+    :return: first even number in input_list
+    """
+
+
 def main():
     print(heron(-5))
     print(heron(3))
