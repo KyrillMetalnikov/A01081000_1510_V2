@@ -13,3 +13,8 @@ class Test(TestCase):
         actual = math.sqrt(5.5)
         expected = exceptions.heron(5.5)
         self.assertAlmostEqual(actual, expected)
+
+    def test_heron_non_perfect_int(self):
+        actual = math.sqrt(42)
+        expected = exceptions.heron(42)
+        self.assertAlmostEqual(actual, expected)
