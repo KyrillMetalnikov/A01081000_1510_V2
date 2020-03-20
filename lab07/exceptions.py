@@ -41,6 +41,11 @@ def findAnEven(input_list):
     :postcondition: return the first even number in input_list
     :raise ValueError: if input_list does not contain an even number
     :return: first even number in input_list
+
+    >>> findAnEven([1, 3, 5, 6, 8, 9])
+    6
+    >>> findAnEven([2])
+    2
     """
     even_number = []
     for value in input_list:
