@@ -36,11 +36,20 @@ def findAnEven(input_list):
     :raise ValueError: if input_list does not contain an even number
     :return: first even number in input_list
     """
+    even_number = []
+    for value in input_list:
+        if value % 2 == 0:
+            even_number.append(value)
+            break
+    if len(even_number) == 0:
+        raise ValueError("input_list must contain an even number!")
+    return even_number[0]
 
 
 def main():
-    print(heron(-5))
-    print(heron(3))
+    # print(heron(-5))
+    # print(heron(3))
+    print(findAnEven([1, 3, 5, 7, 9]))
 
 
 if __name__ == "__main__":
