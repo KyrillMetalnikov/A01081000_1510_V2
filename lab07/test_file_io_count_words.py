@@ -21,7 +21,12 @@ class Test(TestCase):
         self.assertEqual(actual, expected)
 
     @patch("sys.stdout", new_callable=io.StringIO)
-    def test_count_words_for_error(self, mock_stdout):
+    def test_count_words_for_file_not_found_error(self, mock_stdout):
         file_io.count_words("alskdjfaslkdjf")
         expected = "Error: File not found.\n"
         self.assertEqual(expected, mock_stdout.getvalue())
+
+    @patch("sys.stdout", new_callable=io.StringIO)
+    def test_count_words_for_permission_error(self, mock_stdout):
+        file_io.count_words("..\lab07")
+        expected = "Error: Please set the directory for a file.\n"
