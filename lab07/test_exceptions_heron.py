@@ -1,8 +1,8 @@
 from unittest import TestCase
-import ../a1/assignment_one
 import math
 import io
 from unittest.mock import patch
+import exceptions
 
 
 class Test(TestCase):
