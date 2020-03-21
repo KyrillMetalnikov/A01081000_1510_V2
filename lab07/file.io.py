@@ -10,6 +10,12 @@ def get_user_input() -> str:
 
 
 def print_entry_message():
+    """
+    Display welcome message.
+
+    :precondition: No precondition
+    :postcondition: The function will display the entry message
+    """
     print("Welcome to Kyrill's word ranker!  You bank 'em we rank 'em!")
 
 
