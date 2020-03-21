@@ -30,3 +30,8 @@ class Test(TestCase):
     def test_count_words_for_permission_error(self, mock_stdout):
         file_io.count_words("..\lab07")
         expected = "Error: Please set the directory for a file.\n"
+
+    @patch("sys.stdout", new_callable=io.StringIO)
+    def test_count_words_for_unicode_error(self, mock_stdout):
+        file_io.count_words("Shrek.jpg")
+        expected = "Error: Please set the directory for a text file.\n"
