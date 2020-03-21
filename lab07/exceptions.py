@@ -32,7 +32,7 @@ def heron(number) -> float:
     return square_root_guess
 
 
-def findAnEven(input_list):
+def findAnEven(input_list: list) -> int:
     """
     Return the first even number in input_list
 
