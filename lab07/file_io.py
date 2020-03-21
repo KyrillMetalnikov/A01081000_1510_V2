@@ -10,7 +10,7 @@ def get_user_input() -> str:
     :postcondition: The function will return the input
     :return: A string that the user inputted
     """
-    return input("What is the name of the file you wish to open?")
+    return input("What is the name of the file you wish to open?").strip()
 
 
 def print_entry_message():
