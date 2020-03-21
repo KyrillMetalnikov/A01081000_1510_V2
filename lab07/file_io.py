@@ -55,6 +55,9 @@ def count_words(filename: str) -> dict:
     except FileNotFoundError:
         print("Error: File not found")
         return {}
+    except PermissionError:
+        print("Error: Please set the directory for a text file.")
+        return {}
 
 
 def sort_dict(word_dict):
