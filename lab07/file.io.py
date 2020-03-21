@@ -1,3 +1,7 @@
+import doctest
+"""Display the 10 most common words in a text file."""
+
+
 def get_user_input() -> str:
     """
     Get user input.
@@ -24,7 +28,9 @@ def count_words(filename: str) -> dict:
     Count how many times every word comes up in a text file.
 
     :param filename: A string representing the relative address of a text file.
-    :precondition: The
+    :precondition: The file address must be a text file.
+    :postcondition: The function will count how many times each word is written.
+    :return: A dictionary of the words in the text file as keys and the amount of times written as values.
     """
     word_dict = {}
     try:
@@ -70,6 +76,7 @@ def sort_dict(word_dict):
 def main():
     print_entry_message()
     sort_dict(count_words(get_user_input()))
+    doctest.testmod()
 
 
 if __name__ == "__main__":
