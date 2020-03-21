@@ -1,6 +1,11 @@
 from unittest import TestCase
+from unittest.mock import patch
+import file_io
 
 
 class Test(TestCase):
-    def test_get_user_input(self):
-        self.fail()
+    @patch("builtins.input", side_effect=["moby_dick.txt"])
+    def test_get_user_input_only_case(self, _):
+        expected = "moby_dick.txt"
+        actual = file_io.get_user_input()
+        self.assertEqual(expected, actual)
