@@ -51,7 +51,14 @@ def count_words(filename: str) -> dict:
         return {}
 
 
-def rank_words(word_dict):
+def sort_dict(word_dict):
+    """
+    Display the top 10 key value pairs in descending order of their values.
+
+    :param word_dict: A dictionary of key value pairs
+    :precondition: The values in word_dict must be numbers.
+    :postcondition: The dictionary will be sorted and the 10 highest values will be displayed
+    """
     rank_list = sorted(word_dict, key=word_dict.get, reverse=True)
     for i in range(0, 10):
         try:
@@ -62,7 +69,7 @@ def rank_words(word_dict):
 
 def main():
     print_entry_message()
-    rank_words(count_words(get_user_input()))
+    sort_dict(count_words(get_user_input()))
 
 
 if __name__ == "__main__":
