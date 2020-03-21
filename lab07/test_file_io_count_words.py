@@ -1,4 +1,6 @@
 from unittest import TestCase
+from unittest.mock import patch
+import io
 import file_io
 
 
@@ -17,3 +19,9 @@ class Test(TestCase):
                     'contain': 2, 'an': 2, '6': 2, '8': 1, 'append': 1, 'break': 1, 'len': 1, 'main': 3, 'doctest': 1,
                     'testmod': 1, 'name': 1}
         self.assertEqual(actual, expected)
+
+    @patch("sys.stdout", new_callable=io.StringIO)
+    def test_count_words_for_error(self, mock_stdout):
+        file_io.count_words("alskdjfaslkdjf")
+        expected = "Error: File not found\n"
+        self.assertEqual(expected, mock_stdout.getvalue())
