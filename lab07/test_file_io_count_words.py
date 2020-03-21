@@ -23,5 +23,5 @@ class Test(TestCase):
     @patch("sys.stdout", new_callable=io.StringIO)
     def test_count_words_for_error(self, mock_stdout):
         file_io.count_words("alskdjfaslkdjf")
-        expected = "Error: File not found\n"
+        expected = "Error: File not found.\n"
         self.assertEqual(expected, mock_stdout.getvalue())
