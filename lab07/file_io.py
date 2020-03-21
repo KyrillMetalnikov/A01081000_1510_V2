@@ -53,9 +53,12 @@ def count_words(filename: str) -> dict:
                         word_dict[word.lower().strip()] = 1
         return word_dict
     except FileNotFoundError:
-        print("Error: File not found")
+        print("Error: File not found.")
         return {}
     except PermissionError:
+        print("Error: Please set the directory for a file.")
+        return {}
+    except UnicodeDecodeError:
         print("Error: Please set the directory for a text file.")
         return {}
 
