@@ -43,6 +43,16 @@ class Country:
         """
         return self.population
 
+    def get_area(self):
+        """
+        Return the Country's area.
+
+        :precondition: Use this only on a properly initialized country object.
+        :postcondition: The country's area will be returned.
+        :return: An integer representing the area of the country
+        """
+        return self.area
+
     def is_larger(self, country: object) -> bool:
         """
         Determine if the country is larger than another country.
