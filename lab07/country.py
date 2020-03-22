@@ -48,6 +48,13 @@ class Country:
         return self.population / self.area
 
     def __str__(self):
+        """
+        Return a detailed description of the country.
+
+        :precondition: The country object must be properly formatted.
+        :postcondition: The description will be properly returned.
+        :return: A string representing the description of the country.
+        """
         return self.name + " has a population of " + str(self.population) \
                + " and is " + str(self.area) + "square kilometres."
 
