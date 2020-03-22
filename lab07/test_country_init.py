@@ -1,4 +1,6 @@
 from unittest import TestCase
+from unittest.mock import patch
+import io
 import country
 
 
@@ -8,3 +10,9 @@ class TestCountry(TestCase):
         actual = [canada.name, canada.population, canada.area]
         expected = ["Canada", 36290000, 9985000]
         self.assertEqual(actual, expected)
+
+    @patch("sys.stdout", new_callable=io.StringIO)
+    def test_init_wrong_population_print(self, mock_stdout):
+        canada = country.Country("Canada", -25, 9985000)
+        expected = "A population cannot be negative!\n"
+        self.assertEqual(expected, mock_stdout.getvalue())
