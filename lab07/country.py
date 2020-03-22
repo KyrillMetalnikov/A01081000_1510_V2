@@ -1,3 +1,4 @@
+import doctest
 """Represent a country."""
 
 
@@ -30,6 +31,12 @@ class Country:
         :precondition: Use this only on a properly initialized country object.
         :postcondition: The country's name will be returned.
         :return: A string representing the name of the country
+        >>> canada = Country("Canada", 12345, 1234)
+        >>> canada.get_name()
+        'Canada'
+        >>> denmark = Country("Denmark", 123, 12)
+        >>> denmark.get_name()
+        'Denmark'
         """
         return self.name
 
@@ -97,3 +104,11 @@ class Country:
         :return: A string showing the object's address.
         """
         return "Country(\"" + self.name + "\", " + str(self.population) + ", " + str(self.area) + ")"
+
+
+def main():
+    doctest.testmod()
+
+
+if __name__ == "__main__":
+    main()
