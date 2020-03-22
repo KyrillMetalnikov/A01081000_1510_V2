@@ -12,7 +12,13 @@ class TestCountry(TestCase):
         self.assertEqual(actual, expected)
 
     @patch("sys.stdout", new_callable=io.StringIO)
-    def test_init_wrong_population_print(self, mock_stdout):
+    def test_init_wrong_population(self, mock_stdout):
         canada = country.Country("Canada", -25, 9985000)
         expected = "A population cannot be negative!\n"
         self.assertEqual(expected, mock_stdout.getvalue())
+
+    @patch("sys.stdout", new_callable=io.StringIO)
+    def test_init_wrong_area(self, mock_stdout):
+        canada = country.Country("Canada", 36290000, -30)
+        expected = "An area cannot be negative!\n"
+        self.assertEqual(mock_stdout.getvalue(), expected)
