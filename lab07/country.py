@@ -13,7 +13,7 @@ class Country:
         :precondition: The data-types of the params are followed and area/population are > 0.
         :postcondition: A country object will be initialized.
         """
-        self.name = name
+        self.name = name.title()
         if population < 0:
             print("A population cannot be negative!")
         else:
@@ -66,4 +66,4 @@ class Country:
         :postcondition: The information will be properly returned.
         :return: A string showing the object's address.
         """
-        return "<lab07_country.Country object at " + str(id(self))
+        return "Country(\"" + self.name + "\", " + str(self.population) + ", " + str(self.area) + ")"
