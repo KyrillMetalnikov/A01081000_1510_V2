@@ -16,3 +16,10 @@ class TestCountry(TestCase):
         actual = denmark.is_larger(canada)
         expected = False
         self.assertEqual(actual, expected)
+
+    def test_is_larger_same_population(self):
+        canada = country.Country("Canada", 36290000, 9985000)
+        denmark = country.Country("Denmark", 5603000, 9985000)
+        actual = canada.is_larger(denmark)
+        expected = False
+        self.assertEqual(actual, expected)
