@@ -14,6 +14,12 @@ class Country:
         else:
             self.area = area
 
+    def is_larger(self, country):
+        if self.area > country.area:
+            return True
+        else:
+            return False
+
     def population_density(self):
         return self.population / self.area
 
@@ -21,3 +27,5 @@ class Country:
         return self.name + " has a population of " + str(self.population) \
                + " and is " + str(self.area) + "square kilometres."
 
+    def __repr__(self):
+        return "<lab07_country.Country object at " + str(self.id())
