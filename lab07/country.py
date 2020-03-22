@@ -24,6 +24,14 @@ class Country:
             self.area = area
 
     def is_larger(self, country):
+        """
+        Determine if the country is larger than another country.
+
+        :param country: A country object.
+        :precondition: The country param must be a properly formatted country object.
+        :postcondition: The function will determine if the country is larger or not.
+        :return: A boolean representing if the country is larger or not.
+        """
         if self.area > country.area:
             return True
         else:
