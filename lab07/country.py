@@ -30,7 +30,8 @@ class Country:
 
         :precondition: Use this only on a properly initialized country object.
         :postcondition: The country's name will be returned.
-        :return: A string representing the name of the country
+        :return: A string representing the name of the country.
+
         >>> canada = Country("Canada", 12345, 1234)
         >>> canada.get_name()
         'Canada'
@@ -46,7 +47,8 @@ class Country:
 
         :precondition: Use this only on a properly initialized country object.
         :postcondition: The country's population will be returned.
-        :return: An integer representing the population of the country
+        :return: An integer representing the population of the country.
+
         >>> canada = Country("Canada", 12345, 1234)
         >>> canada.get_population()
         12345
@@ -62,7 +64,8 @@ class Country:
 
         :precondition: Use this only on a properly initialized country object.
         :postcondition: The country's area will be returned.
-        :return: An integer representing the area of the country
+        :return: An integer representing the area of the country.
+
         >>> canada = Country("Canada", 12345, 1234)
         >>> canada.get_area()
         1234
@@ -80,6 +83,7 @@ class Country:
         :precondition: The country param must be a properly formatted country object.
         :postcondition: The function will determine if the country is larger or not.
         :return: A boolean representing if the country is larger or not.
+
         >>> canada = Country("Canada", 12345, 1234)
         >>> denmark = Country("Denmark", 123, 12)
         >>> canada.is_larger(denmark)
@@ -104,7 +108,8 @@ class Country:
 
         :precondition: The method is used on a properly formatted country object.
         :postcondition: The population density will be determined.
-        :return: A float representing the population density in people/km^2
+        :return: A float representing the population density in people/km^2.
+
         >>> canada = Country("Canada", 1234, 1234)
         >>> canada.population_density()
         1.0
@@ -135,6 +140,13 @@ class Country:
         :precondition: The country object must be properly formatted.
         :postcondition: The information will be properly returned.
         :return: A string showing the object's address.
+
+        >>> canada = Country("Canada", 1234, 1234)
+        >>> canada
+        Country("Canada", 1234, 1234)
+        >>> canada = Country("Canada", 1234, 1234)
+        >>> [canada]
+        [Country("Canada", 1234, 1234)]
         """
         return "Country(\"" + self.name + "\", " + str(self.population) + ", " + str(self.area) + ")"
 
