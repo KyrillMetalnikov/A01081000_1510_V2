@@ -63,6 +63,12 @@ class Country:
         :precondition: Use this only on a properly initialized country object.
         :postcondition: The country's area will be returned.
         :return: An integer representing the area of the country
+        >>> canada = Country("Canada", 12345, 1234)
+        >>> canada.get_area()
+        1234
+        >>> denmark = Country("Denmark", 123, 12)
+        >>> denmark.get_area()
+        12
         """
         return self.area
 
