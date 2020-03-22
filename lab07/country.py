@@ -47,6 +47,12 @@ class Country:
         :precondition: Use this only on a properly initialized country object.
         :postcondition: The country's population will be returned.
         :return: An integer representing the population of the country
+        >>> canada = Country("Canada", 12345, 1234)
+        >>> canada.get_population()
+        12345
+        >>> denmark = Country("Denmark", 123, 12)
+        >>> denmark.get_population()
+        123
         """
         return self.population
 
