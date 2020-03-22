@@ -56,7 +56,14 @@ class Country:
         :return: A string representing the description of the country.
         """
         return self.name + " has a population of " + str(self.population) \
-               + " and is " + str(self.area) + "square kilometres."
+            + " and is " + str(self.area) + "square kilometres."
 
     def __repr__(self):
+        """
+        Return an informative line with the address of the country object.
+
+        :precondition: The country object must be properly formatted.
+        :postcondition: The information will be properly returned.
+        :return: A string showing the object's address.
+        """
         return "<lab07_country.Country object at " + str(id(self))
