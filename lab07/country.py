@@ -80,6 +80,18 @@ class Country:
         :precondition: The country param must be a properly formatted country object.
         :postcondition: The function will determine if the country is larger or not.
         :return: A boolean representing if the country is larger or not.
+        >>> canada = Country("Canada", 12345, 1234)
+        >>> denmark = Country("Denmark", 123, 12)
+        >>> canada.is_larger(denmark)
+        True
+        >>> canada = Country("Canada", 12345, 1234)
+        >>> denmark = Country("Denmark", 123, 12)
+        >>> denmark.is_larger(canada)
+        False
+        >>> canada = Country("Canada", 12345, 1234)
+        >>> denmark = Country("Denmark", 123, 1234)
+        >>> canada.is_larger(denmark)
+        False
         """
         if self.area > country.area:
             return True
