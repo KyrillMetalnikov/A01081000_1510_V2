@@ -105,6 +105,15 @@ class Country:
         :precondition: The method is used on a properly formatted country object.
         :postcondition: The population density will be determined.
         :return: A float representing the population density in people/km^2
+        >>> canada = Country("Canada", 1234, 1234)
+        >>> canada.population_density()
+        1.0
+        >>> canada = Country("Canada", 2468, 1234)
+        >>> canada.population_density()
+        2.0
+        >>> canada = Country("Canada", 1500, 1000)
+        >>> canada.population_density()
+        1.5
         """
         return self.population / self.area
 
