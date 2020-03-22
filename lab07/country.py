@@ -18,12 +18,12 @@ class Country:
             print("A population cannot be negative!")
         else:
             self.population = population
-        if area < 0:
+        if area < 1:
             print("An area cannot be negative!")
         else:
             self.area = area
 
-    def is_larger(self, country):
+    def is_larger(self, country: object) -> bool:
         """
         Determine if the country is larger than another country.
 
@@ -37,7 +37,7 @@ class Country:
         else:
             return False
 
-    def population_density(self):
+    def population_density(self) -> float:
         """
         Find the population density of the country.
 
@@ -47,7 +47,7 @@ class Country:
         """
         return self.population / self.area
 
-    def __str__(self):
+    def __str__(self) -> str:
         """
         Return a detailed description of the country.
 
@@ -58,7 +58,7 @@ class Country:
         return self.name + " has a population of " + str(self.population) \
             + " and is " + str(self.area) + "square kilometres."
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         """
         Return an informative line with the address of the country object.
 
