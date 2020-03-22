@@ -56,7 +56,7 @@ class Country:
         :return: A string representing the description of the country.
         """
         return self.name + " has a population of " + str(self.population) \
-            + " and is " + str(self.area) + "square kilometres."
+            + " and is " + str(self.area) + " square kilometres."
 
     def __repr__(self) -> str:
         """
