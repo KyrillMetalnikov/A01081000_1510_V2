@@ -23,6 +23,16 @@ class Country:
         else:
             self.area = area
 
+    def get_name(self):
+        """
+        Return the Country's name.
+
+        :precondition: Use this only on a properly initialized country object.
+        :postcondition: The country's name will be returned.
+        :return: A string representing the name of the country
+        """
+        return self.name
+
     def is_larger(self, country: object) -> bool:
         """
         Determine if the country is larger than another country.
