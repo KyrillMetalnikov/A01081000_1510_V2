@@ -33,6 +33,16 @@ class Country:
         """
         return self.name
 
+    def get_population(self):
+        """
+        Return the Country's population.
+
+        :precondition: Use this only on a properly initialized country object.
+        :postcondition: The country's population will be returned.
+        :return: An integer representing the population of the country
+        """
+        return self.population
+
     def is_larger(self, country: object) -> bool:
         """
         Determine if the country is larger than another country.
