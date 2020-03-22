@@ -38,6 +38,13 @@ class Country:
             return False
 
     def population_density(self):
+        """
+        Find the population density of the country.
+
+        :precondition: The method is used on a properly formatted country object.
+        :postcondition: The population density will be determined.
+        :return: A float representing the population density in people/km^2
+        """
         return self.population / self.area
 
     def __str__(self):
@@ -45,4 +52,4 @@ class Country:
                + " and is " + str(self.area) + "square kilometres."
 
     def __repr__(self):
-        return "<lab07_country.Country object at " + str(self.id())
+        return "<lab07_country.Country object at " + str(id(self))
