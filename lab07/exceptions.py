@@ -24,7 +24,7 @@ def heron(number) -> float:
         print("Error: The number provided must be positive!")
         return -1
 
-    square_root_guess = 1  # arbitrary value for the heron formula
+    square_root_guess = number  # arbitrary value for the heron formula
 
     for _ in range(0, 1000):  # arbitrary amount of runs that get it close enough
         square_root_guess = (square_root_guess + (number / square_root_guess)) / 2
