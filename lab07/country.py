@@ -39,7 +39,7 @@ class Country:
         >>> denmark.get_name()
         'Denmark'
         """
-        return self.name
+        return self.__name
 
     def get_population(self):
         """
@@ -56,7 +56,7 @@ class Country:
         >>> denmark.get_population()
         123
         """
-        return self.population
+        return self.__population
 
     def get_area(self):
         """
@@ -73,7 +73,7 @@ class Country:
         >>> denmark.get_area()
         12
         """
-        return self.area
+        return self.__area
 
     def is_larger(self, country: object) -> bool:
         """
