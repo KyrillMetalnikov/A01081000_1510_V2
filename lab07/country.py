@@ -14,15 +14,15 @@ class Country:
         :precondition: The data-types of the params are followed and area/population are > 0.
         :postcondition: A country object will be initialized.
         """
-        self.name = name.title()
+        self.__name = name.title()
         if population < 0:
             print("A population cannot be negative!")
         else:
-            self.population = population
+            self.__population = population
         if area < 1:
             print("An area cannot be negative!")
         else:
-            self.area = area
+            self.__area = area
 
     def get_name(self):
         """
@@ -97,7 +97,7 @@ class Country:
         >>> canada.is_larger(denmark)
         False
         """
-        if self.area > country.area:
+        if self.get_area() > country.get_area():
             return True
         else:
             return False
@@ -120,7 +120,7 @@ class Country:
         >>> canada.population_density()
         1.5
         """
-        return self.population / self.area
+        return self.get_population() / self.get_area()
 
     def __str__(self) -> str:
         """
@@ -130,8 +130,8 @@ class Country:
         :postcondition: The description will be properly returned.
         :return: A string representing the description of the country.
         """
-        return self.name + " has a population of " + str(self.population) \
-            + " and is " + str(self.area) + " square kilometres."
+        return self.get_name() + " has a population of " + str(self.get_population()) \
+            + " and is " + str(self.get_area()) + " square kilometres."
 
     def __repr__(self) -> str:
         """
@@ -148,7 +148,7 @@ class Country:
         >>> [canada]
         [Country("Canada", 1234, 1234)]
         """
-        return "Country(\"" + self.name + "\", " + str(self.population) + ", " + str(self.area) + ")"
+        return "Country(\"" + self.get_name() + "\", " + str(self.get_population()) + ", " + str(self.get_area()) + ")"
 
 
 def main():
