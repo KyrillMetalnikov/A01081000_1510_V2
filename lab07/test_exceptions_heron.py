@@ -31,3 +31,8 @@ class Test(TestCase):
         actual = exceptions.heron(-1)
         expected = -1
         self.assertEqual(actual, expected)
+
+    def test_heron_error_zero(self):
+        actual = exceptions.heron(-1)
+        expected = -1
+        self.assertEqual(actual, expected)
