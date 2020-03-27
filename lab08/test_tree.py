@@ -45,3 +45,10 @@ class TestTree(TestCase):
         actual = tree1.get_circumference()
         expected = 2.0
         self.assertEqual(actual, expected)
+
+    def test_tree_set_age_correct_use(self):
+        tree1 = tree.Tree("Oak", 2, 2.0)
+        tree1.set_age(5)
+        actual = tree1.get_age()
+        expected = 5
+        self.assertEqual(actual, expected)
