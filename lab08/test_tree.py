@@ -19,3 +19,7 @@ class TestTree(TestCase):
     def test_tree_for_init_species_only_white_space(self):
         with self.assertRaises(ValueError):
             tree1 = tree.Tree("      ", 2, 2.0)
+
+    def test_tree_for_init_negative_age(self):
+        with self.assertRaises(ValueError):
+            tree1 = tree.Tree("Oak", -2, 2.0)
