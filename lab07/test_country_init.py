@@ -7,7 +7,7 @@ import country
 class TestCountry(TestCase):
     def test_init_proper_use(self):
         canada = country.Country("Canada", 36290000, 9985000)
-        actual = [canada.name, canada.population, canada.area]
+        actual = [canada.__name, canada.__population, canada.__area]
         expected = ["Canada", 36290000, 9985000]
         self.assertEqual(actual, expected)
 
