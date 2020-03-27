@@ -80,3 +80,9 @@ class TestTree(TestCase):
         print(tree1)
         expected = "Tree('species = Oak', age = 2, circumference = 2.0)\n"
         self.assertEqual(expected, mock_stdout.getvalue())
+
+    def test_tree_repr(self):
+        tree1 = tree.Tree("Oak", 2, 2.0)
+        actual = tree1.__repr__()
+        expected = "Tree('species = Oak', age = 2, circumference = 2.0)"
+        self.assertEqual(expected, actual)
