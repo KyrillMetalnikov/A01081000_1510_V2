@@ -55,4 +55,11 @@ class Tree:
         return self.__circumference
 
     def __str__(self):
-        return f"Tree('{self.species}', {self.age}, {self.__circumference}
+        """
+        Display the object with all attributes.
+
+        :precondition: Only use this with a properly formatted tree object.
+        :postcondition: The trees attributes will be properly displayed.
+        :return: A string with all the tree's attributes.
+        """
+        return f"Tree('{self.species}', {self.age}, {self.__circumference}"
