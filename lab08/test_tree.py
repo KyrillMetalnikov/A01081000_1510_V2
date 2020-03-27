@@ -39,3 +39,9 @@ class TestTree(TestCase):
         actual = tree1.get_age()
         expected = 2
         self.assertEqual(actual, expected)
+
+    def test_tree_get_circumference(self):
+        tree1 = tree.Tree("Oak", 2, 2.0)
+        actual = tree1.get_circumference()
+        expected = 2.0
+        self.assertEqual(actual, expected)
