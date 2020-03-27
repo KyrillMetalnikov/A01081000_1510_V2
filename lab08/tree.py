@@ -40,9 +40,19 @@ class Tree:
 
         :precondition: Only use this with a properly formatted tree object.
         :postcondition: The trees age will be correctly returned.
-        :return: An integer representing the tree's age.
+        :return: An integer representing the tree's age in years.
         """
         return self.__age
+
+    def get_circumference(self):
+        """
+        Return the trees circumference.
+
+        :precondition: Only use this with a properly formatted tree object.
+        :postcondition: The trees circumference will be correctly returned.
+        :return: A float representing the tree's circumference in centimetres.
+        """
+        return self.__circumference
 
     def __str__(self):
         return f"Tree('{self.species}', {self.age}, {self.__circumference}
