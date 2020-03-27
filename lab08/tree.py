@@ -54,6 +54,19 @@ class Tree:
         """
         return self.__circumference
 
+    def set_age(self, age):
+        """
+        Set the age of a tree.
+
+        :param age: An integer representing the tree's age in years.
+        :precondition: Age must be a positive integer.
+        :postcondition: The tree's age will be properly set.
+        """
+        if age < 1:
+            print("Error: age cannot be a negative number.")
+        else:
+            self.__age = age
+
     def __str__(self):
         """
         Display the object with all attributes.
