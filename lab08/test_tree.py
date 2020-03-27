@@ -12,3 +12,6 @@ class TestTree(TestCase):
         expected = "Tree('species = Oak', age = 2, circumference = 2.0)\n"
         self.assertEqual(expected, mock_stdout.getvalue())
 
+    def test_tree_for_init_empty_species(self):
+        with self.assertRaises(ValueError):
+            tree1 = tree.Tree("", 2, 2.0)
