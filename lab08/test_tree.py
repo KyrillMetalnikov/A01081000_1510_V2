@@ -59,3 +59,10 @@ class TestTree(TestCase):
         tree1.set_age(-5)
         expected = "Error: age cannot be a negative number.\n"
         self.assertEqual(mock_stdout.getvalue(), expected)
+
+    def test_tree_set_circumference_correct_use(self):
+        tree1 = tree.Tree("Oak", 2, 2.0)
+        tree1.set_circumference(5.0)
+        actual = tree1.get_circumference()
+        expected = 5.0
+        self.assertEqual(actual, expected)
