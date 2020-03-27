@@ -52,3 +52,10 @@ class TestTree(TestCase):
         actual = tree1.get_age()
         expected = 5
         self.assertEqual(actual, expected)
+
+    @patch("sys.stdout", new_callable=io.StringIO)
+    def test_tree_set_age_negative_age(self, mock_stdout):
+        tree1 = tree.Tree("Oak", 2, 2.0)
+        tree1.set_age(-5)
+        expected = "Error: age cannot be a negative number.\n"
+        self.assertEqual(mock_stdout.getvalue(), expected)
