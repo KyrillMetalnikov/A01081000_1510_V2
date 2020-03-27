@@ -62,4 +62,14 @@ class Tree:
         :postcondition: The trees attributes will be properly displayed.
         :return: A string with all the tree's attributes.
         """
-        return f"Tree('{self.species}', {self.age}, {self.__circumference}"
+        return f"Tree('species = {self.species}', age = {self.age}, circumference = {self.__circumference}"
+
+    def __repr__(self):
+        """
+        Return a descriptive version of the object.
+
+        :precondition: Only use this with a properly formatted tree object.
+        :postcondition: The trees attributes will be properly displayed.
+        :return: A string with all the tree's attributes.
+        """
+        return f"Tree('species = {self.species}', age = {self.age}, circumference = {self.__circumference}"
