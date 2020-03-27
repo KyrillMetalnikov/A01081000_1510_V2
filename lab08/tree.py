@@ -62,10 +62,23 @@ class Tree:
         :precondition: Age must be a positive integer.
         :postcondition: The tree's age will be properly set.
         """
-        if age < 1:
+        if age < 0:
             print("Error: age cannot be a negative number.")
         else:
             self.__age = age
+
+    def set_circumference(self, circumference):
+        """
+        Set the circumference of a tree.
+
+        :param circumference: A float representing the circumference of the tree in centimetres.
+        :precondition: Circumference must be a positive float.
+        :postcondition: The tree's age will be properly set.
+        """
+        if circumference < 0:
+            print("Error: circumference cannot be a negative number.")
+        else:
+            self.__circumference = circumference
 
     def __str__(self):
         """
