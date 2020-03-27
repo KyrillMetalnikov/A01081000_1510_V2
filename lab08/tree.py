@@ -21,3 +21,8 @@ class Tree:
         else:
             self.__circumference = circumference
 
+    def get_species(self):
+        return self.__species
+
+    def __str__(self):
+        return f"Tree('{self.species}', {self.age}, {self.__circumference}
