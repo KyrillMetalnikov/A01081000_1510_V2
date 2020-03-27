@@ -73,3 +73,10 @@ class TestTree(TestCase):
         tree1.set_circumference(-5.0)
         expected = "Error: circumference cannot be a negative number.\n"
         self.assertEqual(mock_stdout.getvalue(), expected)
+
+    @patch("sys.stdout", new_callable=io.StringIO)
+    def test_tree_print_tree(self, mock_stdout):
+        tree1 = tree.Tree("Oak", 2, 2.0)
+        print(tree1)
+        expected = "Tree('species = Oak', age = 2, circumference = 2.0)\n"
+        self.assertEqual(expected, mock_stdout.getvalue())
