@@ -13,3 +13,20 @@ def timer(func):
         return run_time
     return wrapper_timer
 
+
+def factorial_iterative(factorial):
+    total_value = 1
+    if factorial == 0:
+        return 1
+    else:
+        for value in range(1, factorial + 1):
+            total_value = total_value * value
+        return total_value
+
+
+def main():
+    print(factorial_iterative(100))
+
+
+if __name__ == "__main__":
+    main()
