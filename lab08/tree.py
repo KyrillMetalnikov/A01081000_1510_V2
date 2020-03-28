@@ -24,7 +24,7 @@ class Tree:
         else:
             self.__circumference = circumference
 
-    def get_species(self):
+    def get_species(self) -> str:
         """
         Return the trees species.
 
@@ -34,7 +34,7 @@ class Tree:
         """
         return self.__species
 
-    def get_age(self):
+    def get_age(self) -> int:
         """
         Return the trees age.
 
@@ -44,7 +44,7 @@ class Tree:
         """
         return self.__age
 
-    def get_circumference(self):
+    def get_circumference(self) -> float:
         """
         Return the trees circumference.
 
@@ -80,7 +80,7 @@ class Tree:
         else:
             self.__circumference = circumference
 
-    def __str__(self):
+    def __str__(self) -> str:
         """
         Display the object with all attributes.
 
@@ -90,7 +90,7 @@ class Tree:
         """
         return f"Tree('species = {self.__species}', age = {self.__age}, circumference = {self.__circumference})"
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         """
         Return a descriptive version of the object.
 
