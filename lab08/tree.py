@@ -31,6 +31,10 @@ class Tree:
         :precondition: Only use this with a properly formatted tree object.
         :postcondition: The trees species will be correctly returned.
         :return: A string representing the tree's species.
+
+        >>> tree1 = Tree("Oak", 2, 2.0)
+        >>> tree1.get_species()
+        'Oak'
         """
         return self.__species
 
@@ -41,6 +45,10 @@ class Tree:
         :precondition: Only use this with a properly formatted tree object.
         :postcondition: The trees age will be correctly returned.
         :return: An integer representing the tree's age in years.
+
+        >>> tree1 = Tree("Oak", 2, 2.0)
+        >>> tree1.get_age()
+        2
         """
         return self.__age
 
@@ -51,6 +59,10 @@ class Tree:
         :precondition: Only use this with a properly formatted tree object.
         :postcondition: The trees circumference will be correctly returned.
         :return: A float representing the tree's circumference in centimetres.
+
+        >>> tree1 = Tree("Oak", 2, 2.0)
+        >>> tree1.get_circumference()
+        2.0
         """
         return self.__circumference
 
@@ -61,19 +73,28 @@ class Tree:
         :param age: An integer representing the tree's age in years.
         :precondition: Age must be a positive integer.
         :postcondition: The tree's age will be properly set.
+        >>> tree1 = Tree("Oak", 2, 2.0)
+        >>> tree1.set_age(4)
+        >>> tree1.get_age()
+        4
         """
         if age < 0:
             print("Error: age cannot be a negative number.")
         else:
             self.__age = age
 
-    def set_circumference(self, circumference):
+    def set_circumference(self, circumference: float):
         """
         Set the circumference of a tree.
 
         :param circumference: A float representing the circumference of the tree in centimetres.
         :precondition: Circumference must be a positive float.
         :postcondition: The tree's age will be properly set.
+
+        >>> tree1 = Tree("Oak", 2, 2.0)
+        >>> tree1.set_circumference(4.0)
+        >>> tree1.get_circumference()
+        4.0
         """
         if circumference < 0:
             print("Error: circumference cannot be a negative number.")
@@ -87,6 +108,10 @@ class Tree:
         :precondition: Only use this with a properly formatted tree object.
         :postcondition: The trees attributes will be properly displayed.
         :return: A string with all the tree's attributes.
+
+        >>> tree1 = Tree("Oak", 2, 2.0)
+        >>> print(tree1)
+        Tree('species = Oak', age = 2, circumference = 2.0)
         """
         return f"Tree('species = {self.__species}', age = {self.__age}, circumference = {self.__circumference})"
 
@@ -97,5 +122,8 @@ class Tree:
         :precondition: Only use this with a properly formatted tree object.
         :postcondition: The trees attributes will be properly displayed.
         :return: A string with all the tree's attributes.
+        >>> tree1 = Tree("Oak", 2, 2.0)
+        >>> tree1.__repr__()
+        "Tree('species = Oak', age = 2, circumference = 2.0)"
         """
         return f"Tree('species = {self.__species}', age = {self.__age}, circumference = {self.__circumference})"
