@@ -24,8 +24,15 @@ def factorial_iterative(factorial):
         return total_value
 
 
+def factorial_recursive(factorial):
+    if factorial == 0:
+        return 1
+    else:
+        return factorial * (factorial_recursive(factorial - 1))
+
+
 def main():
-    print(factorial_iterative(100))
+    print(factorial_recursive(10))
 
 
 if __name__ == "__main__":
