@@ -2,6 +2,14 @@ import time
 
 
 def timer(func):
+    """
+    Time a function.
+
+    :param func: The function that is being timed.
+    :precondition: Timer must be used as a wrapper function around a function.
+    :postcondition: The function will be properly timed.
+    :return: The amount of time the function takes to run in floating point. (seconds)
+    """
     def wrapper_timer(*args):
         start_time = time.perf_counter()
         func(*args)

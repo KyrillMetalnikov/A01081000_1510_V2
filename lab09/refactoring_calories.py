@@ -19,6 +19,11 @@ Your tasks:
 2. Add a suite of unit tests that prove everything works as it should.
 """
 
+
+def get_new_item():
+
+    return input("Enter food item to add, or 'q' to exit: ")
+
 # Global Constant
 _calories = {"lettuce": 5, "carrot": 52, "apple": 72, "bread": 66,
              "pasta": 221, "rice": 225, "milk": 122, "cheese": 115,
