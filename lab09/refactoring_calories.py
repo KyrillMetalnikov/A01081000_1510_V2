@@ -20,8 +20,14 @@ Your tasks:
 """
 
 
-def get_new_item():
+def user_input():
+    """
+    Take user input.
 
+    :precondition: Use function with no parameters.
+    :postcondition: Function will take user input.
+    :return: A string of the users input.
+    """
     return input("Enter food item to add, or 'q' to exit: ")
 
 # Global Constant

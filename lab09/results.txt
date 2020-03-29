@@ -398,3 +398,5 @@ finished 'factorial_recursive' in 0.0001245000 secs
  100!
 finished 'factorial_iterative' in 0.0000483000 secs 
 finished 'factorial_recursive' in 0.0001303000 secs 
+finished 'factorial_iterative' in 0.0000025000 secs 
+finished 'factorial_iterative' in 0.0000019000 secs 
