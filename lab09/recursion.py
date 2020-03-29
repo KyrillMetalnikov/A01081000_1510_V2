@@ -8,7 +8,7 @@ def timer(func):
         end_time = time.perf_counter()
         run_time = end_time - start_time
         with open("results.txt", "a") as file_object:
-            file_object.write(f"finished {func.__name__!r} in {run_time:.10f} secs")
+            file_object.write(f"finished {func.__name__!r} in {run_time:.10f} secs \n")
         return run_time
     return wrapper_timer
 
@@ -83,9 +83,13 @@ def factorial_recursive_helper(factorial):
     else:
         return factorial * (factorial_recursive_helper(factorial - 1))
 
-def main():
-    for
 
+def main():
+    for value in range(1, 101):
+        with open("results.txt", 'a') as file_object:
+            file_object.write(f"\n {value}!\n")
+        factorial_iterative(value)
+        factorial_recursive(value)
 
 
 if __name__ == "__main__":

@@ -1,0 +1,400 @@
+
+ 1!
+finished 'factorial_iterative' in 0.0000099000 secs 
+finished 'factorial_recursive' in 0.0000060000 secs 
+
+ 2!
+finished 'factorial_iterative' in 0.0000146000 secs 
+finished 'factorial_recursive' in 0.0000132000 secs 
+
+ 3!
+finished 'factorial_iterative' in 0.0000134000 secs 
+finished 'factorial_recursive' in 0.0000154000 secs 
+
+ 4!
+finished 'factorial_iterative' in 0.0000149000 secs 
+finished 'factorial_recursive' in 0.0000196000 secs 
+
+ 5!
+finished 'factorial_iterative' in 0.0000129000 secs 
+finished 'factorial_recursive' in 0.0000108000 secs 
+
+ 6!
+finished 'factorial_iterative' in 0.0000123000 secs 
+finished 'factorial_recursive' in 0.0000143000 secs 
+
+ 7!
+finished 'factorial_iterative' in 0.0000184000 secs 
+finished 'factorial_recursive' in 0.0000231000 secs 
+
+ 8!
+finished 'factorial_iterative' in 0.0000133000 secs 
+finished 'factorial_recursive' in 0.0000140000 secs 
+
+ 9!
+finished 'factorial_iterative' in 0.0000152000 secs 
+finished 'factorial_recursive' in 0.0000164000 secs 
+
+ 10!
+finished 'factorial_iterative' in 0.0000144000 secs 
+finished 'factorial_recursive' in 0.0000156000 secs 
+
+ 11!
+finished 'factorial_iterative' in 0.0000162000 secs 
+finished 'factorial_recursive' in 0.0000229000 secs 
+
+ 12!
+finished 'factorial_iterative' in 0.0000174000 secs 
+finished 'factorial_recursive' in 0.0000203000 secs 
+
+ 13!
+finished 'factorial_iterative' in 0.0000174000 secs 
+finished 'factorial_recursive' in 0.0000183000 secs 
+
+ 14!
+finished 'factorial_iterative' in 0.0000358000 secs 
+finished 'factorial_recursive' in 0.0000212000 secs 
+
+ 15!
+finished 'factorial_iterative' in 0.0000181000 secs 
+finished 'factorial_recursive' in 0.0000238000 secs 
+
+ 16!
+finished 'factorial_iterative' in 0.0000166000 secs 
+finished 'factorial_recursive' in 0.0000429000 secs 
+
+ 17!
+finished 'factorial_iterative' in 0.0000208000 secs 
+finished 'factorial_recursive' in 0.0000257000 secs 
+
+ 18!
+finished 'factorial_iterative' in 0.0000168000 secs 
+finished 'factorial_recursive' in 0.0000136000 secs 
+
+ 19!
+finished 'factorial_iterative' in 0.0000181000 secs 
+finished 'factorial_recursive' in 0.0000197000 secs 
+
+ 20!
+finished 'factorial_iterative' in 0.0000163000 secs 
+finished 'factorial_recursive' in 0.0000307000 secs 
+
+ 21!
+finished 'factorial_iterative' in 0.0000239000 secs 
+finished 'factorial_recursive' in 0.0000285000 secs 
+
+ 22!
+finished 'factorial_iterative' in 0.0000210000 secs 
+finished 'factorial_recursive' in 0.0000278000 secs 
+
+ 23!
+finished 'factorial_iterative' in 0.0000211000 secs 
+finished 'factorial_recursive' in 0.0000256000 secs 
+
+ 24!
+finished 'factorial_iterative' in 0.0000214000 secs 
+finished 'factorial_recursive' in 0.0000338000 secs 
+
+ 25!
+finished 'factorial_iterative' in 0.0000756000 secs 
+finished 'factorial_recursive' in 0.0000322000 secs 
+
+ 26!
+finished 'factorial_iterative' in 0.0000264000 secs 
+finished 'factorial_recursive' in 0.0000345000 secs 
+
+ 27!
+finished 'factorial_iterative' in 0.0000228000 secs 
+finished 'factorial_recursive' in 0.0000274000 secs 
+
+ 28!
+finished 'factorial_iterative' in 0.0000249000 secs 
+finished 'factorial_recursive' in 0.0000395000 secs 
+
+ 29!
+finished 'factorial_iterative' in 0.0000235000 secs 
+finished 'factorial_recursive' in 0.0000308000 secs 
+
+ 30!
+finished 'factorial_iterative' in 0.0000241000 secs 
+finished 'factorial_recursive' in 0.0001040000 secs 
+
+ 31!
+finished 'factorial_iterative' in 0.0000280000 secs 
+finished 'factorial_recursive' in 0.0000315000 secs 
+
+ 32!
+finished 'factorial_iterative' in 0.0000251000 secs 
+finished 'factorial_recursive' in 0.0000483000 secs 
+
+ 33!
+finished 'factorial_iterative' in 0.0000221000 secs 
+finished 'factorial_recursive' in 0.0000718000 secs 
+
+ 34!
+finished 'factorial_iterative' in 0.0000208000 secs 
+finished 'factorial_recursive' in 0.0000479000 secs 
+
+ 35!
+finished 'factorial_iterative' in 0.0000287000 secs 
+finished 'factorial_recursive' in 0.0000396000 secs 
+
+ 36!
+finished 'factorial_iterative' in 0.0000264000 secs 
+finished 'factorial_recursive' in 0.0000512000 secs 
+
+ 37!
+finished 'factorial_iterative' in 0.0000359000 secs 
+finished 'factorial_recursive' in 0.0000462000 secs 
+
+ 38!
+finished 'factorial_iterative' in 0.0000329000 secs 
+finished 'factorial_recursive' in 0.0000484000 secs 
+
+ 39!
+finished 'factorial_iterative' in 0.0000321000 secs 
+finished 'factorial_recursive' in 0.0000440000 secs 
+
+ 40!
+finished 'factorial_iterative' in 0.0000288000 secs 
+finished 'factorial_recursive' in 0.0000586000 secs 
+
+ 41!
+finished 'factorial_iterative' in 0.0000530000 secs 
+finished 'factorial_recursive' in 0.0000548000 secs 
+
+ 42!
+finished 'factorial_iterative' in 0.0000456000 secs 
+finished 'factorial_recursive' in 0.0000557000 secs 
+
+ 43!
+finished 'factorial_iterative' in 0.0000328000 secs 
+finished 'factorial_recursive' in 0.0000598000 secs 
+
+ 44!
+finished 'factorial_iterative' in 0.0000338000 secs 
+finished 'factorial_recursive' in 0.0000577000 secs 
+
+ 45!
+finished 'factorial_iterative' in 0.0000248000 secs 
+finished 'factorial_recursive' in 0.0000645000 secs 
+
+ 46!
+finished 'factorial_iterative' in 0.0000293000 secs 
+finished 'factorial_recursive' in 0.0000504000 secs 
+
+ 47!
+finished 'factorial_iterative' in 0.0000332000 secs 
+finished 'factorial_recursive' in 0.0000431000 secs 
+
+ 48!
+finished 'factorial_iterative' in 0.0000355000 secs 
+finished 'factorial_recursive' in 0.0000404000 secs 
+
+ 49!
+finished 'factorial_iterative' in 0.0000294000 secs 
+finished 'factorial_recursive' in 0.0000422000 secs 
+
+ 50!
+finished 'factorial_iterative' in 0.0000372000 secs 
+finished 'factorial_recursive' in 0.0000486000 secs 
+
+ 51!
+finished 'factorial_iterative' in 0.0000318000 secs 
+finished 'factorial_recursive' in 0.0000465000 secs 
+
+ 52!
+finished 'factorial_iterative' in 0.0000325000 secs 
+finished 'factorial_recursive' in 0.0000800000 secs 
+
+ 53!
+finished 'factorial_iterative' in 0.0000288000 secs 
+finished 'factorial_recursive' in 0.0000481000 secs 
+
+ 54!
+finished 'factorial_iterative' in 0.0000380000 secs 
+finished 'factorial_recursive' in 0.0000515000 secs 
+
+ 55!
+finished 'factorial_iterative' in 0.0000307000 secs 
+finished 'factorial_recursive' in 0.0000635000 secs 
+
+ 56!
+finished 'factorial_iterative' in 0.0000307000 secs 
+finished 'factorial_recursive' in 0.0000507000 secs 
+
+ 57!
+finished 'factorial_iterative' in 0.0000349000 secs 
+finished 'factorial_recursive' in 0.0000584000 secs 
+
+ 58!
+finished 'factorial_iterative' in 0.0000318000 secs 
+finished 'factorial_recursive' in 0.0000502000 secs 
+
+ 59!
+finished 'factorial_iterative' in 0.0000290000 secs 
+finished 'factorial_recursive' in 0.0000537000 secs 
+
+ 60!
+finished 'factorial_iterative' in 0.0000356000 secs 
+finished 'factorial_recursive' in 0.0000851000 secs 
+
+ 61!
+finished 'factorial_iterative' in 0.0000312000 secs 
+finished 'factorial_recursive' in 0.0000502000 secs 
+
+ 62!
+finished 'factorial_iterative' in 0.0000866000 secs 
+finished 'factorial_recursive' in 0.0000583000 secs 
+
+ 63!
+finished 'factorial_iterative' in 0.0000432000 secs 
+finished 'factorial_recursive' in 0.0000519000 secs 
+
+ 64!
+finished 'factorial_iterative' in 0.0000334000 secs 
+finished 'factorial_recursive' in 0.0000538000 secs 
+
+ 65!
+finished 'factorial_iterative' in 0.0000290000 secs 
+finished 'factorial_recursive' in 0.0000627000 secs 
+
+ 66!
+finished 'factorial_iterative' in 0.0000356000 secs 
+finished 'factorial_recursive' in 0.0000546000 secs 
+
+ 67!
+finished 'factorial_iterative' in 0.0000314000 secs 
+finished 'factorial_recursive' in 0.0000633000 secs 
+
+ 68!
+finished 'factorial_iterative' in 0.0000697000 secs 
+finished 'factorial_recursive' in 0.0000913000 secs 
+
+ 69!
+finished 'factorial_iterative' in 0.0000299000 secs 
+finished 'factorial_recursive' in 0.0000653000 secs 
+
+ 70!
+finished 'factorial_iterative' in 0.0000310000 secs 
+finished 'factorial_recursive' in 0.0001086000 secs 
+
+ 71!
+finished 'factorial_iterative' in 0.0000544000 secs 
+finished 'factorial_recursive' in 0.0000621000 secs 
+
+ 72!
+finished 'factorial_iterative' in 0.0000454000 secs 
+finished 'factorial_recursive' in 0.0000653000 secs 
+
+ 73!
+finished 'factorial_iterative' in 0.0000465000 secs 
+finished 'factorial_recursive' in 0.0000702000 secs 
+
+ 74!
+finished 'factorial_iterative' in 0.0000326000 secs 
+finished 'factorial_recursive' in 0.0000657000 secs 
+
+ 75!
+finished 'factorial_iterative' in 0.0000533000 secs 
+finished 'factorial_recursive' in 0.0000638000 secs 
+
+ 76!
+finished 'factorial_iterative' in 0.0000353000 secs 
+finished 'factorial_recursive' in 0.0000825000 secs 
+
+ 77!
+finished 'factorial_iterative' in 0.0001265000 secs 
+finished 'factorial_recursive' in 0.0000627000 secs 
+
+ 78!
+finished 'factorial_iterative' in 0.0000390000 secs 
+finished 'factorial_recursive' in 0.0000665000 secs 
+
+ 79!
+finished 'factorial_iterative' in 0.0000342000 secs 
+finished 'factorial_recursive' in 0.0000705000 secs 
+
+ 80!
+finished 'factorial_iterative' in 0.0000369000 secs 
+finished 'factorial_recursive' in 0.0000809000 secs 
+
+ 81!
+finished 'factorial_iterative' in 0.0000350000 secs 
+finished 'factorial_recursive' in 0.0000661000 secs 
+
+ 82!
+finished 'factorial_iterative' in 0.0000351000 secs 
+finished 'factorial_recursive' in 0.0000703000 secs 
+
+ 83!
+finished 'factorial_iterative' in 0.0000527000 secs 
+finished 'factorial_recursive' in 0.0001020000 secs 
+
+ 84!
+finished 'factorial_iterative' in 0.0000473000 secs 
+finished 'factorial_recursive' in 0.0000759000 secs 
+
+ 85!
+finished 'factorial_iterative' in 0.0000391000 secs 
+finished 'factorial_recursive' in 0.0001739000 secs 
+
+ 86!
+finished 'factorial_iterative' in 0.0000534000 secs 
+finished 'factorial_recursive' in 0.0000812000 secs 
+
+ 87!
+finished 'factorial_iterative' in 0.0000515000 secs 
+finished 'factorial_recursive' in 0.0000731000 secs 
+
+ 88!
+finished 'factorial_iterative' in 0.0000496000 secs 
+finished 'factorial_recursive' in 0.0001136000 secs 
+
+ 89!
+finished 'factorial_iterative' in 0.0000426000 secs 
+finished 'factorial_recursive' in 0.0000746000 secs 
+
+ 90!
+finished 'factorial_iterative' in 0.0000566000 secs 
+finished 'factorial_recursive' in 0.0000734000 secs 
+
+ 91!
+finished 'factorial_iterative' in 0.0000565000 secs 
+finished 'factorial_recursive' in 0.0001345000 secs 
+
+ 92!
+finished 'factorial_iterative' in 0.0000406000 secs 
+finished 'factorial_recursive' in 0.0000815000 secs 
+
+ 93!
+finished 'factorial_iterative' in 0.0000536000 secs 
+finished 'factorial_recursive' in 0.0000782000 secs 
+
+ 94!
+finished 'factorial_iterative' in 0.0000486000 secs 
+finished 'factorial_recursive' in 0.0000697000 secs 
+
+ 95!
+finished 'factorial_iterative' in 0.0000557000 secs 
+finished 'factorial_recursive' in 0.0001111000 secs 
+
+ 96!
+finished 'factorial_iterative' in 0.0000563000 secs 
+finished 'factorial_recursive' in 0.0000836000 secs 
+
+ 97!
+finished 'factorial_iterative' in 0.0000406000 secs 
+finished 'factorial_recursive' in 0.0000848000 secs 
+
+ 98!
+finished 'factorial_iterative' in 0.0000628000 secs 
+finished 'factorial_recursive' in 0.0000832000 secs 
+
+ 99!
+finished 'factorial_iterative' in 0.0000669000 secs 
+finished 'factorial_recursive' in 0.0001245000 secs 
+
+ 100!
+finished 'factorial_iterative' in 0.0000483000 secs 
+finished 'factorial_recursive' in 0.0001303000 secs 
