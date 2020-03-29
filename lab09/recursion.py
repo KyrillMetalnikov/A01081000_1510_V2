@@ -18,6 +18,7 @@ def factorial_iterative(factorial):
     """
     Find the factorial.
 
+    Finds the factorial using a for loop.
     :param factorial: A positive integer of which factorial you need to find.
     :precondition: factorial will be a positive integer.
     :postcondition: The factorial will be properly calculated.
@@ -40,6 +41,22 @@ def factorial_iterative(factorial):
 
 
 def factorial_recursive(factorial):
+    """
+    Find the factorial.
+
+    Finds the factorial using recursion.
+    :param factorial: A positive integer of which factorial you need to find.
+    :precondition: factorial will be a positive integer.
+    :postcondition: The factorial will be properly calculated.
+    :return: An integer representing the factorial
+
+    >>> factorial_recursive(0)
+    1
+    >>> factorial_recursive(3)
+    6
+    >>> factorial_recursive(6)
+    720
+    """
     if factorial == 0:
         return 1
     else:
