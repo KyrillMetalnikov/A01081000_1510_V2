@@ -1,4 +1,3 @@
-import math
 import time
 
 
@@ -14,6 +13,7 @@ def timer(func):
     return wrapper_timer
 
 
+@timer
 def factorial_iterative(factorial):
     """
     Find the factorial.
@@ -40,11 +40,12 @@ def factorial_iterative(factorial):
         return total_value
 
 
+@timer
 def factorial_recursive(factorial):
     """
     Find the factorial.
 
-    Finds the factorial using recursion.
+    Finds the factorial using a recursive helper function.
     :param factorial: A positive integer of which factorial you need to find.
     :precondition: factorial will be a positive integer.
     :postcondition: The factorial will be properly calculated.
@@ -57,14 +58,34 @@ def factorial_recursive(factorial):
     >>> factorial_recursive(6)
     720
     """
+    return factorial_recursive_helper(factorial)
+
+
+def factorial_recursive_helper(factorial):
+    """
+    Find the factorial.
+
+    Finds the factorial using recursion.
+    :param factorial: A positive integer of which factorial you need to find.
+    :precondition: factorial will be a positive integer.
+    :postcondition: The factorial will be properly calculated.
+    :return: An integer representing the factorial
+
+    >>> factorial_recursive_helper(0)
+    1
+    >>> factorial_recursive_helper(3)
+    6
+    >>> factorial_recursive_helper(6)
+    720
+    """
     if factorial == 0:
         return 1
     else:
-        return factorial * (factorial_recursive(factorial - 1))
-
+        return factorial * (factorial_recursive_helper(factorial - 1))
 
 def main():
-    print(factorial_recursive(10))
+    for
+
 
 
 if __name__ == "__main__":
