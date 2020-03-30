@@ -32,7 +32,6 @@ def user_input_food_item():
 
 
 def add_food_items():
-    # Global Constant
     _calories = {"lettuce": 5, "carrot": 52, "apple": 72, "bread": 66,
                  "pasta": 221, "rice": 225, "milk": 122, "cheese": 115,
                  "yogurt": 145, "beef": 240, "chicken": 140, "butter": 102
@@ -44,27 +43,36 @@ def add_food_items():
         new_item_calories = int(input("Enter calories for " + new_item + ": "))
         _calories[new_item] = new_item_calories
 
-        total_calories = 0
-        for item in _calories:
-            total_calories = total_calories + _calories[item]
+        total_calories = calculate_total_calories(_calories)
 
-        food_item_names = []
-        for item in _calories:
-            food_item_names.append(item)
+        food_item_names = dict_keys_into_list(_calories)
 
         avg_calories = total_calories / len(_calories)
 
-        print("\nFood Items:", sorted(food_item_names))
-        print("Total Calories:", total_calories,
-              "Average Calories: %0.1f\n" % avg_calories)
+        display_food_items(food_item_names, total_calories, avg_calories)
 
         new_item = input("Enter food item to add, or 'q' to exit: ")
+
+
+def calculate_total_calories(_calories: dict) -> int:
+    total_calories = 0
+    for item in _calories:
+        total_calories = total_calories + _calories[item]
+    return total_calories
 
 
 def display_food_items(food_item_names: list, total_calories: int, avg_calories: float):
     print("\nFood Items:", sorted(food_item_names))
     print("Total Calories:", total_calories,
           "Average Calories: %0.1f\n" % avg_calories)
+
+
+def dict_keys_into_list(dictionary: dict) -> list:
+    item_names = []
+    for item in dictionary:
+        item_names.append(item)
+    return item_names
+
 
 
 def main():
