@@ -32,10 +32,17 @@ def user_input_food_item():
 
 
 def add_food_items():
+    """
+    Add food items with their calories based on the user input.
+
+    :precondition: The input prompts are followed.
+    :postcondition: The food items will be properly added/
+    """
     _calories = {"lettuce": 5, "carrot": 52, "apple": 72, "bread": 66,
                  "pasta": 221, "rice": 225, "milk": 122, "cheese": 115,
                  "yogurt": 145, "beef": 240, "chicken": 140, "butter": 102
                  }
+
     # Input loop
     new_item = user_input_food_item()
     while new_item != "q":
@@ -62,6 +69,11 @@ def calculate_total_value(value: dict) -> int:
     :precondition: The rules of the param must be followed.
     :postcondition: The total value will be properly calculated.
     :return: An integer representing the total value of the values in the dictionary.
+
+    >>> calculate_total_value({"One": 1, "Two": 2, "Three": 3})
+    6
+    >>> calculate_total_value({})
+    0
     """
     total_value = 0
     for item in value:
@@ -93,7 +105,7 @@ def dict_keys_into_list(dictionary: dict) -> list:
     :postcondition: The keys of the dictionary will be moved into a list.
     :return: A list of the dictionary keys.
 
-    >>> dict_keys_into_list({"One": 1, "Two": 2, "Three": 3}
+    >>> dict_keys_into_list({"One": 1, "Two": 2, "Three": 3})
     ["One", "Two", "Three"]
     >>> dict_keys_into_list({})
     []
