@@ -85,6 +85,19 @@ def display_food_items(food_item_names: list, total_calories: int, avg_calories:
 
 
 def dict_keys_into_list(dictionary: dict) -> list:
+    """
+    Move all the keys of a dictionary into a list.
+
+    :param dictionary: A dictionary of key-value pairs.
+    :precondition: The rules of the params must be followed.
+    :postcondition: The keys of the dictionary will be moved into a list.
+    :return: A list of the dictionary keys.
+
+    >>> dict_keys_into_list({"One": 1, "Two": 2, "Three": 3}
+    ["One", "Two", "Three"]
+    >>> dict_keys_into_list({})
+    []
+    """
     item_names = []
     for item in dictionary:
         item_names.append(item)
