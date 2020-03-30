@@ -62,6 +62,15 @@ def calculate_total_calories(_calories: dict) -> int:
 
 
 def display_food_items(food_item_names: list, total_calories: int, avg_calories: float):
+    """
+    Display all the food items and their calories.
+
+    :param food_item_names: A list of strings representing food items.
+    :param total_calories: An integer representing the total calories of all the food items.
+    :param avg_calories: A float representing the average calories of the food items.
+    :precondition: The rules of the params must be followed.
+    :postcondition: The items and calories will be properly displayed.
+    """
     print("\nFood Items:", sorted(food_item_names))
     print("Total Calories:", total_calories,
           "Average Calories: %0.1f\n" % avg_calories)
@@ -72,7 +81,6 @@ def dict_keys_into_list(dictionary: dict) -> list:
     for item in dictionary:
         item_names.append(item)
     return item_names
-
 
 
 def main():
