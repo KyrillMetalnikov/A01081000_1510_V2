@@ -43,7 +43,7 @@ def add_food_items():
         new_item_calories = int(input("Enter calories for " + new_item + ": "))
         _calories[new_item] = new_item_calories
 
-        total_calories = calculate_total_calories(_calories)
+        total_calories = calculate_total_value(_calories)
 
         food_item_names = dict_keys_into_list(_calories)
 
@@ -54,11 +54,19 @@ def add_food_items():
         new_item = input("Enter food item to add, or 'q' to exit: ")
 
 
-def calculate_total_calories(_calories: dict) -> int:
-    total_calories = 0
-    for item in _calories:
-        total_calories = total_calories + _calories[item]
-    return total_calories
+def calculate_total_value(value: dict) -> int:
+    """
+    Calculate the total value of the values in a dictionary.
+
+    :param value: A dictionary with integers as the values.
+    :precondition: The rules of the param must be followed.
+    :postcondition: The total value will be properly calculated.
+    :return: An integer representing the total value of the values in the dictionary.
+    """
+    total_value = 0
+    for item in value:
+        total_value = total_value + value[item]
+    return total_value
 
 
 def display_food_items(food_item_names: list, total_calories: int, avg_calories: float):
