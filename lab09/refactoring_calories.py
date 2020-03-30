@@ -20,7 +20,7 @@ Your tasks:
 """
 
 
-def user_input():
+def user_input_food_item():
     """
     Take user input.
 
@@ -30,31 +30,46 @@ def user_input():
     """
     return input("Enter food item to add, or 'q' to exit: ")
 
-# Global Constant
-_calories = {"lettuce": 5, "carrot": 52, "apple": 72, "bread": 66,
-             "pasta": 221, "rice": 225, "milk": 122, "cheese": 115,
-             "yogurt": 145, "beef": 240, "chicken": 140, "butter": 102
-             }
 
-# Input loop
-new_item = input("Enter food item to add, or 'q' to exit: ")
-while new_item != "q":
+def add_food_items():
+    # Global Constant
+    _calories = {"lettuce": 5, "carrot": 52, "apple": 72, "bread": 66,
+                 "pasta": 221, "rice": 225, "milk": 122, "cheese": 115,
+                 "yogurt": 145, "beef": 240, "chicken": 140, "butter": 102
+                 }
+    # Input loop
+    new_item = user_input_food_item()
+    while new_item != "q":
 
-    new_item_calories = int(input("Enter calories for " + new_item + ": "))
-    _calories[new_item] = new_item_calories
+        new_item_calories = int(input("Enter calories for " + new_item + ": "))
+        _calories[new_item] = new_item_calories
 
-    total_calories = 0
-    for item in _calories:
-        total_calories = total_calories + _calories[item]
+        total_calories = 0
+        for item in _calories:
+            total_calories = total_calories + _calories[item]
 
-    food_item_names = []
-    for item in _calories:
-        food_item_names.append(item)
+        food_item_names = []
+        for item in _calories:
+            food_item_names.append(item)
 
-    avg_calories = total_calories / len(_calories)
+        avg_calories = total_calories / len(_calories)
 
+        print("\nFood Items:", sorted(food_item_names))
+        print("Total Calories:", total_calories,
+              "Average Calories: %0.1f\n" % avg_calories)
+
+        new_item = input("Enter food item to add, or 'q' to exit: ")
+
+
+def display_food_items(food_item_names: list, total_calories: int, avg_calories: float):
     print("\nFood Items:", sorted(food_item_names))
     print("Total Calories:", total_calories,
           "Average Calories: %0.1f\n" % avg_calories)
 
-    new_item = input("Enter food item to add, or 'q' to exit: ")
+
+def main():
+    add_food_items()
+
+
+if __name__ == "__main__":
+    main()
