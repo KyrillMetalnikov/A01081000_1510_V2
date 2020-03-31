@@ -3,7 +3,7 @@ import recursion
 
 
 class Test(TestCase):
-    def test_factorial_iterative_zero(self):
-        actual = recursion.factorial_iterative(0)
+    def test_factorial_recursive_helper_zero(self):
+        actual = recursion.factorial_recursive_helper(0)
         expected = 1
         self.assertEqual(actual, expected)
