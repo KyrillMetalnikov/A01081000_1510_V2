@@ -13,3 +13,7 @@ class Test(TestCase):
         expected = 1
         self.assertEqual(actual, expected)
 
+    def test_factorial_recursive_helper_larger_number(self):
+        actual = recursion.factorial_recursive_helper(6)
+        expected = 720
+        self.assertEqual(expected, actual)
