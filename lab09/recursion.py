@@ -31,13 +31,6 @@ def factorial_iterative(factorial):
     :precondition: factorial will be a positive integer.
     :postcondition: The factorial will be properly calculated.
     :return: An integer representing the factorial
-
-    >>> factorial_iterative(0)
-    1
-    >>> factorial_iterative(3)
-    6
-    >>> factorial_iterative(6)
-    720
     """
     total_value = 1
     if factorial == 0:
@@ -58,13 +51,6 @@ def factorial_recursive(factorial):
     :precondition: factorial will be a positive integer.
     :postcondition: The factorial will be properly calculated.
     :return: An integer representing the factorial
-
-    >>> factorial_recursive(0)
-    1
-    >>> factorial_recursive(3)
-    6
-    >>> factorial_recursive(6)
-    720
     """
     return factorial_recursive_helper(factorial)
 
