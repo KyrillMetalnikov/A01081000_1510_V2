@@ -84,20 +84,18 @@ def is_poker(hand):
     >>> is_poker("jkqa88")
     False
     """
+    # checks the hands for valid characters and length
     poker_hand_regex_characters = re.compile(r'^((([ajqkt])|([2-9])){5})$', re.I | re.VERBOSE)
     match_object = poker_hand_regex_characters.search(hand)
-    poker_hand_regex_valid = re.compile(r'(\w)\1{4}')
-    match_object_two = poker_hand_regex_valid.search(hand)
-    if match_object and not match_object_two:
+    poker_hand_regex_valid = re.compile(r'(\w)\1{4}')  # checks to see if it's a 5 of a kind
+    five_of_a_kind = poker_hand_regex_valid.search(hand)
+    if match_object and not five_of_a_kind:  # not 5 of a kind as that's an invalid hand.
         return True
     else:
         return False
 
 
 def main():
-    # print(is_email("Stefan's address is asd@9999.com ya know?"))
-    # print(is_nakamoto("fnf;3lkn;a Zesfsdf Nakamoto asf av3wr"))
-    print(is_poker("aaaja"))
     doctest.testmod()
 
 
