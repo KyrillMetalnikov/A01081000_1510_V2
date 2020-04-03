@@ -17,3 +17,8 @@ class Test(TestCase):
         expected = False
         actual = regular_expressions.is_nakamoto("Charles nakamoto")
         self.assertEqual(expected, actual)
+
+    def test_is_nakamoto_invalid_first_name_dot(self):
+        expected = False
+        actual = regular_expressions.is_nakamoto("Mr. Nakamoto")
+        self.assertEqual(expected, actual)
