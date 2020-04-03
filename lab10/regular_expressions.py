@@ -18,17 +18,16 @@ def is_email(address: str) -> bool:
     >>> is_email("xX_420N008Sn1p3R_Xx@9gag.ca")
     True
     >>> is_email("a;slkdjf;alskdjf;lakjs;lakefj r@d.com asdfasdf")
-    True
+    False
     >>> is_email(";alskdjf;alkjsdf _@hoSJ ;SLDF.x ")
     False
     """
-    email_address_regex = re.compile(r'''(
+    email_address_regex = re.compile(r'''(^
     \w+  # username part of email
     @  # at symbol separating username from domain
-    ([a-z]|\d*)+  # domain name
-    [.]  # period separating domain name with top level domain
-    ([a-z]{2,4})  # top level domain
-    )''', re.I | re.VERBOSE)
+    [a-z\d]+  # domain name
+    \.([a-z]){2,4}  # top level domain
+    $)''', re.I | re.VERBOSE)
     match_object = email_address_regex.search(address)
     if match_object:
         return True
