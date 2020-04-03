@@ -3,6 +3,24 @@ import re
 
 
 def is_email(address: str) -> bool:
+    """
+    Determine if there's an email inside of a string.
+
+    Uses regex search method to see if something matches an email within the text inputted.
+    :param address: A string.
+    :precondition: address must be inputted as a string.
+    :postcondition: Function will determine if there is an email within the string.
+    :return: A boolean representing if it found a string or not.
+
+    >>> is_email("Kyrill@hotmail.com")
+    True
+    >>> is_email("xX_420N008Sn1p3R_Xx@9gag.ca")
+    True
+    >>> is_email("a;slkdjf;alskdjf;lakjs;lakefj r@d.com asdfasdf")
+    True
+    >>> is_email(";alskdjf;alkjsdf _@hoSJ ;SLDF.x ")
+    False
+    """
     email_address_regex = re.compile(r'''(
     (\w+)+  # username part of email
     @  # at symbol separating username from domain
@@ -12,13 +30,13 @@ def is_email(address: str) -> bool:
     )''', re.I | re.VERBOSE)
     match_object = email_address_regex.search(address)
     if match_object:
-        print("The email address you entered is: ", match_object.group())
+        return True
     else:
-        print("That's not an email address.")
+        return False
 
 
 def main():
-    is_email("Stefan's address is sazaric2@g9mail.com ya know?")
+    print(is_email("Stefan's address is sazaric2@9999.com ya know?"))
 
 
 if __name__ == "__main__":
