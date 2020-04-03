@@ -13,3 +13,7 @@ class Test(TestCase):
         expected = True
         self.assertEqual(actual, expected)
 
+    def test_is_email_valid_letters_numbers_underscores(self):
+        actual = regular_expressions.is_email("xX_420N008Sn1p3R_Xx@9gag.ca")
+        expected = True
+        self.assertEqual(actual, expected)
