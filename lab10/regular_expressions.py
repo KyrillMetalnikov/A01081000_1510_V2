@@ -22,10 +22,10 @@ def is_email(address: str) -> bool:
     False
     """
     email_address_regex = re.compile(r'''(
-    (\w+)+  # username part of email
+    \w+  # username part of email
     @  # at symbol separating username from domain
     ([a-z]|\d*)+  # domain name
-    [.]+  # period separating domain name with top level domain
+    [.]  # period separating domain name with top level domain
     ([a-z]{2,4})  # top level domain
     )''', re.I | re.VERBOSE)
     match_object = email_address_regex.search(address)
@@ -35,8 +35,22 @@ def is_email(address: str) -> bool:
         return False
 
 
+def is_nakamoto(name):
+    full_name_of_nakamoto = re.compile(r'''(
+    [A-Z][a-z]+
+    [ ]
+    Nakamoto$
+    )''', re.VERBOSE)
+    match_object = full_name_of_nakamoto.search(name)
+    if match_object:
+        return True
+    else:
+        return False
+
+
 def main():
-    print(is_email("Stefan's address is sazaric2@9999.com ya know?"))
+    # print(is_email("Stefan's address is asd@9999.com ya know?"))
+    print(is_nakamoto("Zesfsdf Nakamoto"))
 
 
 if __name__ == "__main__":
