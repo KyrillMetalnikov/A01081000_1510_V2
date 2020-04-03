@@ -37,3 +37,8 @@ class Test(TestCase):
         expected = False
         actual = regular_expressions.is_nakamoto("Charl3s Nakamoto")
         self.assertEqual(expected, actual)
+
+    def test_is_nakamoto_name_must_be_nakamoto(self):
+        expected = False
+        actual = regular_expressions.is_nakamoto("Charles Darwin")
+        self.assertEqual(expected, actual)
