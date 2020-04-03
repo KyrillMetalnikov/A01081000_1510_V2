@@ -1,5 +1,6 @@
 """Demonstrate correct usage of regular expressions."""
 import re
+import doctest
 
 
 def is_email(address: str) -> bool:
@@ -36,10 +37,27 @@ def is_email(address: str) -> bool:
 
 
 def is_nakamoto(name):
+    """
+    Determine if the name inputted is a full name with Nakamoto as the last name.
+
+    :param name: A string
+    :precondition: name must be a string.
+    :postcondition: Function will determine if there is a name XXX Nakamoto in the string.
+    :return: A boolean representing whether or not there is the name within the string.
+
+    >>> is_nakamoto("Charles Nakamoto")
+    True
+    >>> is_nakamoto("charles Nakamoto")
+    False
+    >>> is_nakamoto("Charles nakamoto")
+    False
+    >>> is_nakamoto("s;dfsjdkfl Charles Nakamoto fhalwkfhaks")
+    True
+    """
     full_name_of_nakamoto = re.compile(r'''(
-    [A-Z][a-z]+
-    [ ]
-    Nakamoto$
+    [A-Z][a-z]+  # Firstname must be a capital letter followed by lowercase letters
+    [ ]  # 
+    Nakamoto ($|[ ])
     )''', re.VERBOSE)
     match_object = full_name_of_nakamoto.search(name)
     if match_object:
@@ -50,7 +68,8 @@ def is_nakamoto(name):
 
 def main():
     # print(is_email("Stefan's address is asd@9999.com ya know?"))
-    print(is_nakamoto("Zesfsdf Nakamoto"))
+    # print(is_nakamoto("fnf;3lkn;a Zesfsdf Nakamoto asf av3wr"))
+    doctest.testmod()
 
 
 if __name__ == "__main__":
