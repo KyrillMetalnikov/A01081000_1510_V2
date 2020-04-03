@@ -52,3 +52,8 @@ class Test(TestCase):
         expected = False
         actual = regular_expressions.is_poker("jjjjj")
         self.assertEqual(expected, actual)
+
+    def test_is_poker_one_in_string(self):
+        expected = False
+        actual = regular_expressions.is_poker("12345")
+        self.assertEqual(expected, actual)
