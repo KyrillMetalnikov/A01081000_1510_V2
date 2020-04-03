@@ -32,3 +32,8 @@ class Test(TestCase):
         expected = True
         actual = regular_expressions.is_poker("66jqk")
         self.assertEqual(expected, actual)
+
+    def test_is_poker_high_card(self):
+        expected = True
+        actual = regular_expressions.is_poker("aqj45")
+        self.assertEqual(expected, actual)
