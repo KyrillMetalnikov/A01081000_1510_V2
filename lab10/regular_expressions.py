@@ -67,6 +67,23 @@ def is_nakamoto(name):
 
 
 def is_poker(hand):
+    """
+    Determine if the hand is a valid poker hand.
+
+    Function checks if all characters can be valid cards, and makes sure there isn't more than 4 of the same card.
+    :param hand: Hand is a string representing a potential poker hand.
+    :precondition: hand must be a string.
+    :postcondition: Function will check if it's a valid poker hand.
+    :return: A boolean representing if it was a valid hand.
+    >>> is_poker("12345")
+    False
+    >>> is_poker("qkkkq")
+    True
+    >>> is_poker("5678")
+    False
+    >>> is_poker("jkqa88")
+    False
+    """
     poker_hand_regex_characters = re.compile(r'^((([ajqkt])|([2-9])){5})$', re.I | re.VERBOSE)
     match_object = poker_hand_regex_characters.search(hand)
     poker_hand_regex_valid = re.compile(r'(\w)\1{4}')
