@@ -54,13 +54,24 @@ def is_nakamoto(name):
     >>> is_nakamoto("s;dfsjdkfl Charles Nakamoto fhalwkfhaks")
     True
     """
-    full_name_of_nakamoto = re.compile(r'''(
+    full_name_of_nakamoto_regex = re.compile(r'''(
     [A-Z][a-z]+  # Firstname must be a capital letter followed by lowercase letters
     [ ]  # 
     Nakamoto ($|[ ])
     )''', re.VERBOSE)
-    match_object = full_name_of_nakamoto.search(name)
+    match_object = full_name_of_nakamoto_regex.search(name)
     if match_object:
+        return True
+    else:
+        return False
+
+
+def is_poker(hand):
+    poker_hand_regex_characters = re.compile(r'^((([ajqkt])|([2-9])){5})$', re.I | re.VERBOSE)
+    match_object = poker_hand_regex_characters.search(hand)
+    poker_hand_regex_valid = re.compile(r'(\w)\1{4}')
+    match_object_two = poker_hand_regex_valid.search(hand)
+    if match_object and not match_object_two:
         return True
     else:
         return False
@@ -69,6 +80,7 @@ def is_nakamoto(name):
 def main():
     # print(is_email("Stefan's address is asd@9999.com ya know?"))
     # print(is_nakamoto("fnf;3lkn;a Zesfsdf Nakamoto asf av3wr"))
+    print(is_poker("aaaja"))
     doctest.testmod()
 
 
