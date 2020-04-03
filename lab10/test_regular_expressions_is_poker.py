@@ -17,3 +17,8 @@ class Test(TestCase):
         expected = True
         actual = regular_expressions.is_poker("222jj")
         self.assertEqual(expected, actual)
+
+    def test_is_poker_three_of_a_kind(self):
+        expected = True
+        actual = regular_expressions.is_poker("222jk")
+        self.assertEqual(expected, actual)
