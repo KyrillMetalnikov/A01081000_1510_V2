@@ -37,3 +37,8 @@ class Test(TestCase):
         actual = regular_expressions.is_email("xX_420N008Sn1p3R_Xx@bcit@bcit.ca")
         expected = False
         self.assertEqual(actual, expected)
+
+    def test_is_email_invalid_dashes_in_domain(self):
+        actual = regular_expressions.is_email("xX_420N008Sn1p3R_Xx@9_gag.ca")
+        expected = False
+        self.assertEqual(actual, expected)
