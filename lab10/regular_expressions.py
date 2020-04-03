@@ -51,13 +51,13 @@ def is_nakamoto(name):
     >>> is_nakamoto("Charles nakamoto")
     False
     >>> is_nakamoto("s;dfsjdkfl Charles Nakamoto fhalwkfhaks")
-    True
+    False
     """
-    full_name_of_nakamoto_regex = re.compile(r'''(
+    full_name_of_nakamoto_regex = re.compile(r'''(^
     [A-Z][a-z]+  # Firstname must be a capital letter followed by lowercase letters
     [ ]  # 
-    Nakamoto ($|[ ])
-    )''', re.VERBOSE)
+    Nakamoto
+    $)''', re.VERBOSE)
     match_object = full_name_of_nakamoto_regex.search(name)
     if match_object:
         return True

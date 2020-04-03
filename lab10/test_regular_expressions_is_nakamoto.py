@@ -22,3 +22,8 @@ class Test(TestCase):
         expected = False
         actual = regular_expressions.is_nakamoto("Mr. Nakamoto")
         self.assertEqual(expected, actual)
+
+    def test_is_nakamoto_invalid_usage_gibberish_before(self):
+        expected = False
+        actual = regular_expressions.is_nakamoto("ffas;fjalsdkfj Charles Nakamoto")
+        self.assertEqual(expected, actual)
