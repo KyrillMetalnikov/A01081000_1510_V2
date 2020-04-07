@@ -14,15 +14,15 @@ class Country:
         :precondition: The data-types of the params are followed and area/population are > 0.
         :postcondition: A country object will be initialized.
         """
-        self.__name = name.title()
+        self.name = name.title()
         if population < 0:
             print("A population cannot be negative!")
         else:
-            self.__population = population
+            self.population = population
         if area < 1:
             print("An area cannot be negative!")
         else:
-            self.__area = area
+            self.area = area
 
     def get_name(self):
         """
