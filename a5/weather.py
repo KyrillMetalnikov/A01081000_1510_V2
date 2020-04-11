@@ -5,16 +5,21 @@ import requests
 # url=https://api.openweathermap.org/data/2.5/onecall?lat=49.2827&lon=123.1207&unit=metric&appid=
 
 
-def get_json(url: str) -> None:
+def get_json(url: str) -> object:
     response = requests.get(url)
     response.raise_for_status()
     return json.loads(response.text)
 
 
+def display_weather(api_call: object, days: int) -> None:
+    print(api_call["daily.weather.main"])
+    print(api_call["daily.temp.max"])
+
+
 def main():
     url = "https://api.openweathermap.org/data/2.5/onecall?lat=49.2827&lon=123.1207&unit=metric&appid"\
           "=7f1f5906c928af9f27256e0472282275"
-    get_json(url)
+    display_weather(get_json(url))
 
 
 if __name__ == "__main__":
