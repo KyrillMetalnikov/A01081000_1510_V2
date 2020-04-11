@@ -5,17 +5,16 @@ import requests
 # url=https://api.openweathermap.org/data/2.5/onecall?lat=49.2827&lon=123.1207&unit=metric&appid=
 
 
-def get_forecast(url: str) -> None:
+def get_json(url: str) -> None:
     response = requests.get(url)
     response.raise_for_status()
-    vancouver_weather = json.loads(response.text)
-    print(vancouver_weather["current"])
+    return json.loads(response.text)
 
 
 def main():
     url = "https://api.openweathermap.org/data/2.5/onecall?lat=49.2827&lon=123.1207&unit=metric&appid"\
           "=7f1f5906c928af9f27256e0472282275"
-    get_forecast(url)
+    get_json(url)
 
 
 if __name__ == "__main__":
