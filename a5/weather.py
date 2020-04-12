@@ -18,22 +18,33 @@ def get_json(url: str) -> object:
     return json.loads(response.text)
 
 
-def display_weather(api_call: object, day: int) -> None:
+def display_weather(api_call: dict, day: int) -> None:
+    """
+    Display the weather in vancouver for a set amount of days.
+
+    :param api_call: An openweatherapi json object.
+    :param day: An integer representing how many days to show.
+    :precondition: The rules of the param must be followed with days being between 1-8.
+    :postcondition: The weather will be displayed.
+    """
     display_weather_description(api_call, day)
     display_min_max_temperature(api_call, day)
     display_sunrise_sunset(api_call, day)
 
 
-def display_weather_description(api_call: object, day: int) -> None:
+def display_weather_description(api_call: dict, day: int) -> None:
+    """
+    Display the weather description
+    """
     print(api_call["daily"][day]["weather"][0]["main"])
 
 
-def display_min_max_temperature(api_call: object, day: int) -> None:
+def display_min_max_temperature(api_call: dict, day: int) -> None:
     print(f'Minimum temperature: {api_call["daily"][day]["temp"]["min"]}\n'
           f'Maximum temperature: {api_call["daily"][day]["temp"]["max"]}')
 
 
-def display_sunrise_sunset(api_call: object, day: int) -> None:
+def display_sunrise_sunset(api_call: dict, day: int) -> None:
     print(f'Sunrise: {datetime.datetime.fromtimestamp(api_call["daily"][day]["sunrise"])}\n'
           f'Sunset: {datetime.datetime.fromtimestamp(api_call["daily"][day]["sunset"])}')
 
