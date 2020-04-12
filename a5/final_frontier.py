@@ -13,7 +13,8 @@ def display_asteroid_name(api_call: dict, day: date):
 
 
 def display_asteroid_size(api_call: dict, day: date):
-    print(f'This asteroid is also {api_call["near_earth_objects"][str(day)][0]["close_approach_data"][0]}')
+    print(f'''This asteroid is also estimated to be a max of {api_call["near_earth_objects"][str(day)][0]
+    ["estimated_diameter"]["meters"]["estimated_diameter_max"]} meters in diameter''')
 
 
 def get_tomorrows_date(todays_date: date):
@@ -30,6 +31,7 @@ def main():
     #     display_near_earth_objects_velocity(weather.get_json(url), get_tomorrows_date(todays_date))
     #     todays_date = get_tomorrows_date(todays_date)
     #     time.sleep(300)
+    display_asteroid_size(weather.get_json(url), get_tomorrows_date(todays_date))
 
 
 if __name__ == "__main__":
