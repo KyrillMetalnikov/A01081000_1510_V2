@@ -11,9 +11,8 @@ def get_json(url: str) -> object:
     return json.loads(response.text)
 
 
-def display_weather(api_call: object, days: int) -> None:
-    print(api_call["daily.weather.main"])
-    print(api_call["daily.temp.max"])
+def display_weather(api_call: object) -> None:
+    print(api_call["daily"][0]["weather"][0]["main"])
 
 
 def main():
