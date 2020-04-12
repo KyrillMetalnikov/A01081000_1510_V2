@@ -52,13 +52,21 @@ def display_min_max_temperature(api_call: dict, day: int) -> None:
     :param api_call: An openweatherapi json object converted to dict.
     :param day: An integer representing which day to display.
     :precondition: The rules of the param must be followed with day being between 1-8.
-    :postcondition: The weather description will be displayed.
+    :postcondition: The minimum and maximum temperatures will be displayed in celcius.
     """
     print(f'Minimum temperature: {api_call["daily"][day]["temp"]["min"]}\n'
           f'Maximum temperature: {api_call["daily"][day]["temp"]["max"]}')
 
 
 def display_sunrise_sunset(api_call: dict, day: int) -> None:
+    """
+    Display the time of the sunrise and sunset.
+
+    :param api_call: An openweatherapi json object converted to dict.
+    :param day: An integer representing which day to display.
+    :precondition: The rules of the param must be followed with day being between 1-8.
+    :postcondition: The time of the sunrise and sunset will be displayed.
+    """
     print(f'Sunrise: {datetime.datetime.fromtimestamp(api_call["daily"][day]["sunrise"])}\n'
           f'Sunset: {datetime.datetime.fromtimestamp(api_call["daily"][day]["sunset"])}')
 
