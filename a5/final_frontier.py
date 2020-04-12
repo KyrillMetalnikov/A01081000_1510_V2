@@ -42,6 +42,14 @@ def display_asteroid_size(api_call: dict, day: date):
 
 
 def get_tomorrows_date(todays_date: date):
+    """
+    Replace the date with the next days date.
+
+    :param todays_date: A valid date object.
+    :precondition: The rules of the params are followed.
+    :postcondition: The next days date will be returned.
+    :return: A date object with the next days date inside.
+    """
     todays_date = todays_date.replace(day=(todays_date.day + 1))
     return todays_date
 
