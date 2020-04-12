@@ -29,6 +29,14 @@ def display_asteroid_name(api_call: dict, day: date):
 
 
 def display_asteroid_size(api_call: dict, day: date):
+    """
+    Display an asteroids diameter in meters.
+
+    :param api_call: A dict version of a NASA NeoWS json object.
+    :param day: A date class for the day being searched.
+    :precondition: The rules of the param must be followed, and day must be at one day in the future.
+    :postcondition: The biggest asteroids diameter in meters will be displayed.
+    """
     print(f'''This asteroid is also estimated to be a max of {api_call["near_earth_objects"][str(day)][0]
     ["estimated_diameter"]["meters"]["estimated_diameter_max"]} meters in diameter.\n''')
 
