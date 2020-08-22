@@ -72,8 +72,7 @@ def display_sunrise_sunset(api_call: dict, day: int) -> None:
 
 
 def main():
-    url = "https://api.openweathermap.org/data/2.5/onecall?lat=49.2497&lon=-123.1193&units=metric&appid"\
-          "=7f1f5906c928af9f27256e0472282275"
+    url = 
     amount_of_days = input("How many days do you want to see? (up to 7 days)")
 
     try:
